@@ -1,8 +1,13 @@
+@import '@fontsource-variable/inclusive-sans';
 @import "tailwindcss";
 
 @import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
+
+@theme {
+  --font-sans: "Inclusive Sans Variable", sans-serif;
+}
 
 :root {
   --radius: 0.625rem;
@@ -115,6 +120,7 @@
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
   }

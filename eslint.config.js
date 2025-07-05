@@ -7,6 +7,8 @@ import { fileURLToPath } from 'node:url';
 import ts from 'typescript-eslint';
 import svelteConfig from './svelte.config.js';
 
+import oxlint from "eslint-plugin-oxlint";
+
 const gitignorePath = fileURLToPath(new URL('./.gitignore', import.meta.url));
 
 export default ts.config(
@@ -16,6 +18,7 @@ export default ts.config(
 	...svelte.configs.recommended,
 	prettier,
 	...svelte.configs.prettier,
+	...oxlint.configs["flat/recommended"],
 	{
 		languageOptions: {
 			globals: { ...globals.browser, ...globals.node }

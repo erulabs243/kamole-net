@@ -1,0 +1,3 @@
+{
+  "ignorePatterns": ["src/lib/data/gql/", "node_modules/", "src/lib/components/ui/"]
+}

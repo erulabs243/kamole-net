@@ -1,3 +1,11 @@
 <script lang="ts">
-import { Button } from "@/components/ui/button";
+import type { PageProps } from "./$types";
+
+import { HomeMain } from "@/components/partials";
+
+let { data }: PageProps = $props();
 </script>
+
+<main>
+  <HomeMain posts={data.first} />
+</main>

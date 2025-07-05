@@ -12,6 +12,6 @@ let { data }: PageProps = $props();
   <div class={css({
       bg: "red.800"
     })}>
-    <p>Title</p>
+    <p>Title qui marche</p>
   </div>
 </main>

@@ -1,6 +1,2 @@
 @import '@fontsource-variable/inclusive-sans';
 @layer reset, base, tokens, recipes, utilities;
-
-@theme {
-  --font-sans: "Inclusive Sans Variable", sans-serif;
-}

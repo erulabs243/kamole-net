@@ -1,5 +1,6 @@
 <script lang="ts">
 import type { PageProps } from "./$types";
+import { css } from "styled-system/css";
 
 import { HomeMain } from "@/components/partials";
 
@@ -8,4 +9,9 @@ let { data }: PageProps = $props();
 
 <main>
   <HomeMain posts={data.first} />
+  <div class={css({
+      bg: "red.800"
+    })}>
+    <p>Title</p>
+  </div>
 </main>

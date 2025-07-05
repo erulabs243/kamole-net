@@ -1,5 +1,4 @@
 <script lang="ts">
-import { Button } from "@/components/ui/button";
 import type { Category } from "@/data/gql";
 
 interface Props {
@@ -16,13 +15,11 @@ let { categories }: Props = $props();
   <!-- Navigation -->
   <nav class="hidden sm:flex items-center justify-center gap-x-2 bg-neutral-900 py-2">
     {#each categories as category}
-      <Button
+      <a
           href={`/${category.slug}`}
-          variant="link"
-          class="text-white"
         >
         {category.name}
-      </Button>
+      </a>
     {/each}
   </nav>
 </header>

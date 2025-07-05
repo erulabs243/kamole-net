@@ -1,5 +1,8 @@
 <script lang="ts">
 import type { Category } from "@/data/gql";
+import { stack } from "styled-system/patterns";
+
+import { buttonRecipe } from "$lib/components/ui/button";
 
 interface Props {
 	categories: Array<Category>;
@@ -13,9 +16,16 @@ let { categories }: Props = $props();
 
   </div>
   <!-- Navigation -->
-  <nav class="hidden sm:flex items-center justify-center gap-x-2 bg-neutral-900 py-2">
+  <nav class={stack({
+      direction: "row",
+      py: "2",
+      alignItems: "center",
+      justifyContent: "center",
+      hideBelow: "md"
+    })}>
     {#each categories as category}
       <a
+          class={buttonRecipe({ variant: "subtle"})}
           href={`/${category.slug}`}
         >
         {category.name}

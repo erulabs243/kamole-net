@@ -1,24 +1,46 @@
 <script lang="ts">
-import type { Post } from "@/data/gql";
+import { grid, gridItem } from "styled-system/patterns";
+import { css, cx } from "styled-system/css";
 
-import { SimplePost } from "../cards";
+import type { Post as PostType } from "@/data/gql";
+
+import SimplePost from "../cards/simple-post.svelte";
 
 interface Props {
-	posts: Array<Post>;
+	posts: Array<PostType>;
 }
 
 let { posts }: Props = $props();
 </script>
 
-<div class="grid sm:grid-cols-3 gap-4 sm:gap-8 my-4 sm:my-8">
-  {#if posts[0]}
-    <div class="col-span-2">
-      <SimplePost post={posts[0].node} />
-    </div>
+<div>
+<section class={grid({
+    columns: { base: 1, sm: 2},
+    gap: "4"
+  })}>
+
+  <!-- First line -->
+  {#if posts.slice(0, 2).length > 0}
+    {#each posts.slice(0, 2) as post}
+      <div class={gridItem()}>
+      <SimplePost
+        post={post}
+      />
+      </div>
+    {/each}
   {/if}
-  <div class="space-y-4">
-  {#each posts.slice(1) as post}
-    <SimplePost post={post.node} />
-  {/each}
-  </div>
+</section>
+<section class={grid({
+    columns: { base: 1, sm: 3},
+    mt: "8",
+    gap: "4"
+  })}>
+
+  {#if posts.slice(2).length > 0}
+    {#each posts.slice(2) as post}
+      <SimplePost post={post} />
+    {/each}
+  {/if}
+  
+</section>
 </div>

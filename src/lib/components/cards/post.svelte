@@ -27,8 +27,8 @@ let category = $derived(post?.node?.categories?.nodes?.at(0));
       href={`/${category.slug}/${post.node.slug}`}
     >
     <Image
-      src={post?.featuredImage?.node?.sourceUrl}
-      alt={post?.featuredImage?.node?.altText}
+      src={post?.node.featuredImage?.node?.sourceUrl}
+      alt={post?.node.featuredImage?.node?.altText}
     />
     </a>
   </div>

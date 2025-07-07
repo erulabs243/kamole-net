@@ -15,13 +15,15 @@ interface Props {
 
 let { post }: Props = $props();
 
-let category = $derived(post.categories?.nodes.at(0));
+let category = $derived(post.node.categories?.nodes.at(0));
 </script>
 
 <article class={cx(
 		card({ size: "sm"}).root, "group",
-		css({ p: "0"})
+		css({ p: "0"}),
+		"group"
 	)}>
+	<a href={`/${category.slug}/${post.node.slug}`}>
 	<!-- Image -->
 	<div class={cx(
 			card().image,
@@ -34,10 +36,11 @@ let category = $derived(post.categories?.nodes.at(0));
 			})
 		)}>
 		<Image
-			src={post.featuredImage?.node?.sourceUrl}
-			alt={post.featuredImage?.node?.altText}
+			src={post.node.featuredImage?.node?.sourceUrl}
+			alt={post.node.featuredImage?.node?.altText}
 		/>
 	</div>
+	</a>
 
 	<!-- Content -->
 	<div class={cx(
@@ -45,7 +48,7 @@ let category = $derived(post.categories?.nodes.at(0));
 			css({ p: "0"})
 		)}>
 		<!-- Category & date-->
-		<div class={hstack({ gap: "4", })}>
+		<div class={hstack({ flexWrap: "wrap", gap: "0", spaceX: "2", mb: "1" })}>
 			{#if category}	
 				<a
 					class={badgeRecipe({ variant: "solid"})}
@@ -54,16 +57,22 @@ let category = $derived(post.categories?.nodes.at(0));
 					{category.name}
 				</a>
 			{/if}
-			<Date date={post.date!} />
+			<Date date={post.node.date!} />
 		</div>
 		<a
-			href={`/${category!.slug}/${post.slug}`}
+			href={`/${category!.slug}/${post.node.slug}`}
 			class={css({ _groupHover: { color: "fg.primary"}})}
 		>
 		<h3 class={cx(
-				css({ textStyle: { base: "h5", sm: "h4"}, fontWeight: "bold"})
+				css({
+					textStyle: { base: "h5", sm: "h4"},
+					fontWeight: "bold",
+					lineHeight: "1.1",
+					lineClamp: 3,
+					_groupHover: { color: "fg.primary" }
+				})
 			)}>
-			{post.title}
+			{post.node.title}
 		</h3>
 		</a>
 	</div>

@@ -12,10 +12,11 @@ let { children, data }: LayoutProps = $props();
 <div class={css({ color: "fg"})}>
 <Header categories={data.categories.nodes} />
 
-<div class={container({
+<main class={container({
     maxW: { base: "full", md: "4/5"},
     my: "8",
+    spaceY: { base: "8", md: "12"}
   })}>
 {@render children()}
-</div>
+</main>
 </div>

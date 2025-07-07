@@ -6,10 +6,8 @@ import { HomeMain, Posts, SectionWithHeader } from "@/components/partials";
 import PostsWithHighlight from "@/components/partials/posts-with-highlight.svelte";
 
 let { data }: PageProps = $props();
-console.error(data.latest?.length);
 </script>
 
-<main>
   <HomeMain posts={data.first} />
 
   <!-- Latest posts -->
@@ -41,4 +39,3 @@ console.error(data.latest?.length);
       <Posts posts={data.popular} />
     </SectionWithHeader>
   {/if}
-</main>

@@ -14,3 +14,22 @@ export const getCategories = async () => {
 		})
 	).categories;
 };
+
+export const findCategory = async (category: string, limit: number = 12) => {
+	return await client.query({
+		categories: {
+			__args: {
+				first: limit,
+				where: {
+					slug: [category],
+				},
+			},
+			nodes: {
+				id: true,
+				name: true,
+				slug: true,
+				seo,
+			},
+		},
+	});
+};

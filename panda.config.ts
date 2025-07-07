@@ -1,5 +1,7 @@
 import { defineConfig } from "@pandacss/dev";
 
+import { textStyles } from "./src/lib/components/ui/text-styles";
+
 export default defineConfig({
 	// Whether to use css reset
 	preflight: true,
@@ -20,13 +22,18 @@ export default defineConfig({
 	// Useful for theme customization
 	theme: {
 		extend: {
+			textStyles,
 			semanticTokens: {
 				colors: {
 					bg: {
-						DEFAULT: { value: "#fff" },
-						subtle: { value: "#f9fafb" },
-						muted: { value: "#f3f4f6" },
-						emphasized: { value: "#e5e7eb" },
+						DEFAULT: {
+							value: {
+								base: "{colors.amber.800}",
+							},
+						},
+						subtle: { value: { base: "{colors.amber.200}" } },
+						muted: { value: { base: "{colors.neutral.200}" } },
+						emphasized: { value: { base: "{colors.amber.800}" } },
 						inverted: { value: "#000" },
 						panel: { value: "#fff" },
 						error: { value: "#fef2f2" },
@@ -48,14 +55,15 @@ export default defineConfig({
 					},
 
 					fg: {
-						DEFAULT: { value: "#000000" },
-						muted: { value: "#4b5563" },
+						DEFAULT: { value: "{colors.neutral.900}" },
+						muted: { value: "{colors.neutral.600}" },
 						subtle: { value: "#9ca3af" },
 						inverted: { value: "#f9fafb" },
 						error: { value: "#ef4444" },
 						warning: { value: "#ea580c" },
 						success: { value: "#16a34a" },
 						info: { value: "#2563eb" },
+						primary: { value: "{colors.amber.500}" },
 					},
 
 					accent: {

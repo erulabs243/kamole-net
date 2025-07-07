@@ -12,6 +12,14 @@ export const getPosts = async (limit: number = 10) => {
 					node: {
 						title: true,
 						slug: true,
+						isSticky: true,
+						date: true,
+						featuredImage: {
+							node: {
+								sourceUrl: true,
+								altText: true,
+							},
+						},
 						tags: {
 							nodes: {
 								name: true,

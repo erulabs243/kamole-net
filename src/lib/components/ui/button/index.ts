@@ -73,10 +73,9 @@ export const buttonRecipe = cva({
 
 		variant: {
 			solid: {
-				bg: "accent.solid",
+				bg: "bg",
 				color: "fg.inverted",
 				borderColor: "transparent",
-				"--button-bg": "colors.accent.solid",
 				_hover: {
 					bg: "color-mix(in srgb, var(--button-bg) 80%, #000 20%)",
 				},

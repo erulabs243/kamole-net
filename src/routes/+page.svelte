@@ -2,16 +2,43 @@
 import type { PageProps } from "./$types";
 import { css } from "styled-system/css";
 
-import { HomeMain } from "@/components/partials";
+import { HomeMain, Posts, SectionWithHeader } from "@/components/partials";
+import PostsWithHighlight from "@/components/partials/posts-with-highlight.svelte";
 
 let { data }: PageProps = $props();
+console.error(data.latest?.length);
 </script>
 
 <main>
   <HomeMain posts={data.first} />
-  <div class={css({
-      bg: "red.800"
-    })}>
-    <p>Title qui marche</p>
-  </div>
+
+  <!-- Latest posts -->
+  {#if data.latest?.length > 0}
+    <SectionWithHeader
+      title="Dernières publications"
+      hasTopBorder
+    >
+      <Posts posts={data.latest} />
+    </SectionWithHeader>   
+  {/if}
+
+  {#if data.pinned?.length > 0}
+    <!-- Pinned posts -->
+    <SectionWithHeader
+      hasTopBorder
+      title="Choix de la rédaction"
+    >
+      <PostsWithHighlight posts={data.pinned} />
+    </SectionWithHeader>
+  {/if}
+
+  {#if data.popular?.length > 9}
+    <!-- Popular posts -->
+    <SectionWithHeader
+      hasTopBorder
+      title="Les plus populaires"
+    >
+      <Posts posts={data.popular} />
+    </SectionWithHeader>
+  {/if}
 </main>

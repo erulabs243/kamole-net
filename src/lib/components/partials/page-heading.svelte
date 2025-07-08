@@ -9,7 +9,7 @@ let { title }: Props = $props();
 </script>
 
 <header class={css({
-    py: { base: "12", sm: "24"}
+    py: { base: "4", sm: "8"}
   })}>
   <h1 class={css({
       textStyle: "h2",

@@ -86,18 +86,23 @@ export const getPinnedPosts = async (limit: number = 8) => {
 export const getPostsByCategory = async (
 	category: string,
 	limit: number = 12,
-	page: number = 1,
+	after: string | null = null,
+	before: string | null = null,
 ) => {
 	return (
 		await client.query({
 			posts: {
 				__args: {
 					first: limit,
+					after,
+					before,
 					where: { categoryIn: [category] },
 				},
 				pageInfo: {
 					hasNextPage: true,
 					hasPreviousPage: true,
+					endCursor: true,
+					startCursor: true,
 				},
 				edges: {
 					node: {

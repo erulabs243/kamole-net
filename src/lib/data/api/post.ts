@@ -135,3 +135,54 @@ export const getPostsByCategory = async (
 		})
 	).posts;
 };
+
+/**
+ * Get single post by slug
+ */
+export const getPost = async (slug: string) => {
+	return (
+		await client.query({
+			post: {
+				__args: {
+					id: slug,
+					idType: "SLUG",
+				},
+				title: true,
+				excerpt: true,
+				slug: true,
+				date: true,
+				content: true,
+				isSticky: true,
+				featuredImage: {
+					node: {
+						sourceUrl: true,
+						altText: true,
+					},
+				},
+				categories: {
+					nodes: {
+						name: true,
+						slug: true,
+						id: true,
+					},
+				},
+				tags: {
+					nodes: {
+						name: true,
+						slug: true,
+						id: true,
+					},
+				},
+				author: {
+					node: {
+						name: true,
+						avatar: {
+							url: true,
+						},
+					},
+				},
+				seo,
+			},
+		})
+	).post;
+};

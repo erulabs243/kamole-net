@@ -60,7 +60,7 @@ let category = $derived(post.node.categories?.nodes.at(0));
 			<Date date={post.node.date!} />
 		</div>
 		<a
-			href={`/${category!.slug}/${post.node.slug}`}
+			href={`/${category.slug}/${post.node.slug}`}
 			class={css({ _groupHover: { color: "fg.primary"}})}
 		>
 		<h3 class={cx(

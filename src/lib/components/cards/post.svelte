@@ -56,7 +56,7 @@ let category = $derived(post?.node?.categories?.nodes?.at(0));
     </div>
 
     <a
-      href={`/${post.node.slug}`}
+      href={`/${category.slug}/${post.node.slug}`}
     >
       <h3 class={css({
           textStyle: "h6",

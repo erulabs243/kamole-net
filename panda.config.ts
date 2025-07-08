@@ -1,10 +1,14 @@
 import { defineConfig } from "@pandacss/dev";
+import typographyPreset from "pandacss-preset-typography";
 
 import { textStyles } from "./src/lib/components/ui/text-styles";
 
 export default defineConfig({
 	// Whether to use css reset
 	preflight: true,
+
+	// Presets
+	presets: [typographyPreset(), "@pandacss/preset-panda"],
 
 	// Where to look for your css declarations
 	include: ["./src/**/*.{js,ts,svelte}", "./pages/**/*.{js,ts,svelte}"],

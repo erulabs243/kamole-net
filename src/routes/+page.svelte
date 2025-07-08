@@ -1,45 +1,31 @@
 <script lang="ts">
-import type { PageProps } from "./$types";
-import { css } from "styled-system/css";
+	import type { PageProps } from './$types';
+	import { css } from 'styled-system/css';
 
-import {
-	HomeMain,
-	Posts,
-	SectionWithHeader,
-	PostsWithHighlight,
-} from "@/components/partials";
+	import { HomeMain, Posts, SectionWithHeader, PostsWithHighlight } from '@/components/partials';
 
-let { data }: PageProps = $props();
+	let { data }: PageProps = $props();
 </script>
 
-  <HomeMain posts={data.first} />
+<HomeMain posts={data.first} />
 
-  <!-- Latest posts -->
-  {#if data.latest?.length > 0}
-    <SectionWithHeader
-      title="Dernières publications"
-      hasTopBorder
-    >
-      <Posts posts={data.latest} />
-    </SectionWithHeader>   
-  {/if}
+<!-- Latest posts -->
+{#if data.latest?.length > 0}
+	<SectionWithHeader title="Dernières publications" hasTopBorder>
+		<Posts posts={data.latest} />
+	</SectionWithHeader>
+{/if}
 
-  {#if data.pinned?.length > 0}
-    <!-- Pinned posts -->
-    <SectionWithHeader
-      hasTopBorder
-      title="Choix de la rédaction"
-    >
-      <PostsWithHighlight posts={data.pinned} />
-    </SectionWithHeader>
-  {/if}
+{#if data.pinned?.length > 0}
+	<!-- Pinned posts -->
+	<SectionWithHeader hasTopBorder title="Choix de la rédaction">
+		<PostsWithHighlight posts={data.pinned} />
+	</SectionWithHeader>
+{/if}
 
-  {#if data.popular?.length > 9}
-    <!-- Popular posts -->
-    <SectionWithHeader
-      hasTopBorder
-      title="Les plus populaires"
-    >
-      <Posts posts={data.popular} />
-    </SectionWithHeader>
-  {/if}
+{#if data.popular?.length > 9}
+	<!-- Popular posts -->
+	<SectionWithHeader hasTopBorder title="Les plus populaires">
+		<Posts posts={data.popular} />
+	</SectionWithHeader>
+{/if}

@@ -1,6 +1,6 @@
-import type { PageServerLoad } from "./$types";
+import type { PageServerLoad } from './$types';
 
-import { postClient } from "@/data/api";
+import { postClient } from '@/data/api';
 
 export const load = (async () => {
 	const latestPosts = await postClient.getPosts(13);
@@ -24,6 +24,6 @@ export const load = (async () => {
 		first: firstPosts,
 		latest: remainingPosts,
 		pinned: pinned?.slice(0, 5),
-		popular: popular?.slice(0, 4) ?? [],
+		popular: popular?.slice(0, 4) ?? []
 	};
 }) satisfies PageServerLoad;

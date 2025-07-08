@@ -6,9 +6,11 @@ import { prose } from "styled-system/recipes";
 import { css } from "styled-system/css";
 
 import { DateWidget, Image } from "@/components/widgets";
+import { SectionWithHeader, PostsWithHighlight } from "@/components/partials";
 import { badgeRecipe } from "@/components/ui/badge";
 
 let { data }: PageProps = $props();
+console.dir(data.post.relatedPosts);
 </script>
 
 <div class={css({ spaceY: "8" })}>
@@ -55,6 +57,9 @@ let { data }: PageProps = $props();
         <p class={prose({ size: { base: "sm", sm: "lg" }})}>
           {@html data.post.excerpt}
         </p>
+
+        <!-- Author -->
+        
       </div>
     </div>
 
@@ -73,4 +78,14 @@ let { data }: PageProps = $props();
   <article class={prose({ size: { base: "sm", sm: "lg" }})}>
     {@html data.post.content}
   </article>
+
+  {#if data.post?.relatedPosts?.edges?.length > 0}
+  <!-- Related posts -->
+  <SectionWithHeader
+    hasTopBorder
+    title="Ils pourraient vous intéresser"
+  >
+    <PostsWithHighlight posts={data.post.relatedPosts?.edges} />
+  </SectionWithHeader>
+  {/if}
 </div>

@@ -192,11 +192,11 @@ export type CategoryConnection = (RootQueryToCategoryConnection | CategoryToAnce
 
 
 /** A paginated relationship between objects. Supports cursor-based pagination with edges containing relationship metadata and nodes containing the related objects. */
-export type Connection = (RootQueryToCategoryConnection | TermNodeToEnqueuedScriptConnection | TermNodeToEnqueuedStylesheetConnection | CategoryToAncestorsCategoryConnection | CategoryToCategoryConnection | CategoryToContentNodeConnection | ContentTypeToTaxonomyConnection | TaxonomyToContentTypeConnection | TaxonomyToTermNodeConnection | ContentTypeToContentNodeConnection | UserToCommentConnection | CommentToCommentConnection | UserToEnqueuedScriptConnection | UserToEnqueuedStylesheetConnection | UserToMediaItemConnection | HierarchicalContentNodeToContentNodeAncestorsConnection | HierarchicalContentNodeToContentNodeChildrenConnection | ContentNodeToEnqueuedScriptConnection | ContentNodeToEnqueuedStylesheetConnection | MediaItemToCommentConnection | UserToPageConnection | PageToCommentConnection | PageToRevisionConnection | UserToPostConnection | PostToPostConnection | PostToCategoryConnection | PostToCommentConnection | PostToPostFormatConnection | PostFormatToContentNodeConnection | PostFormatToPostConnection | PostToRevisionConnection | PostToTagConnection | TagToContentNodeConnection | TagToPostConnection | PostToTermNodeConnection | UserToRevisionsConnection | UserToUserRoleConnection | CategoryToPostConnection | RootQueryToCommentConnection | RootQueryToContentNodeConnection | RootQueryToContentTypeConnection | RootQueryToMediaItemConnection | MenuToMenuItemConnection | MenuItemToMenuItemConnection | RootQueryToMenuItemConnection | RootQueryToMenuConnection | RootQueryToPageConnection | RootQueryToPluginConnection | RootQueryToPostFormatConnection | RootQueryToPostConnection | RootQueryToEnqueuedScriptConnection | RootQueryToEnqueuedStylesheetConnection | RootQueryToRevisionsConnection | RootQueryToTagConnection | RootQueryToTaxonomyConnection | RootQueryToTermNodeConnection | RootQueryToThemeConnection | RootQueryToUserRoleConnection | RootQueryToUserConnection) & { __isUnion?: true }
+export type Connection = (RootQueryToCategoryConnection | TermNodeToEnqueuedScriptConnection | TermNodeToEnqueuedStylesheetConnection | CategoryToAncestorsCategoryConnection | CategoryToCategoryConnection | CategoryToContentNodeConnection | ContentTypeToTaxonomyConnection | TaxonomyToContentTypeConnection | TaxonomyToTermNodeConnection | ContentTypeToContentNodeConnection | UserToCommentConnection | CommentToCommentConnection | UserToEnqueuedScriptConnection | UserToEnqueuedStylesheetConnection | UserToMediaItemConnection | HierarchicalContentNodeToContentNodeAncestorsConnection | HierarchicalContentNodeToContentNodeChildrenConnection | ContentNodeToEnqueuedScriptConnection | ContentNodeToEnqueuedStylesheetConnection | MediaItemToCommentConnection | UserToPageConnection | PageToCommentConnection | PageToRevisionConnection | UserToPostConnection | PostToPostConnection | PostToCategoryConnection | PostToCommentConnection | PostToPostFormatConnection | PostFormatToContentNodeConnection | PostFormatToPostConnection | RelatedPostsConnection | PostToRevisionConnection | PostToTagConnection | TagToContentNodeConnection | TagToPostConnection | PostToTermNodeConnection | UserToRevisionsConnection | UserToUserRoleConnection | CategoryToPostConnection | RootQueryToCommentConnection | RootQueryToContentNodeConnection | RootQueryToContentTypeConnection | RootQueryToMediaItemConnection | MenuToMenuItemConnection | MenuItemToMenuItemConnection | RootQueryToMenuItemConnection | RootQueryToMenuConnection | RootQueryToPageConnection | RootQueryToPluginConnection | RootQueryToPostFormatConnection | RootQueryToPostConnection | RootQueryToEnqueuedScriptConnection | RootQueryToEnqueuedStylesheetConnection | RootQueryToRevisionsConnection | RootQueryToTagConnection | RootQueryToTaxonomyConnection | RootQueryToTermNodeConnection | RootQueryToThemeConnection | RootQueryToUserRoleConnection | RootQueryToUserConnection) & { __isUnion?: true }
 
 
 /** Represents a connection between two objects. Contains both the related object (node) and metadata about the relationship (cursor). */
-export type Edge = (TermNodeToEnqueuedScriptConnectionEdge | TermNodeToEnqueuedStylesheetConnectionEdge | CategoryToAncestorsCategoryConnectionEdge | CategoryToCategoryConnectionEdge | ContentNodeToContentTypeConnectionEdge | TaxonomyToContentTypeConnectionEdge | TaxonomyToTermNodeConnectionEdge | ContentTypeToTaxonomyConnectionEdge | ContentTypeToContentNodeConnectionEdge | ContentNodeToEditLockConnectionEdge | CommentToCommenterConnectionEdge | CommentToContentNodeConnectionEdge | CommentToParentCommentConnectionEdge | CommentToCommentConnectionEdge | UserToCommentConnectionEdge | UserToEnqueuedScriptConnectionEdge | UserToEnqueuedStylesheetConnectionEdge | NodeWithAuthorToUserConnectionEdge | HierarchicalContentNodeToContentNodeAncestorsConnectionEdge | HierarchicalContentNodeToContentNodeChildrenConnectionEdge | ContentNodeToEnqueuedScriptConnectionEdge | ContentNodeToEnqueuedStylesheetConnectionEdge | ContentNodeToEditLastConnectionEdge | HierarchicalContentNodeToParentContentNodeConnectionEdge | MediaItemToCommentConnectionEdge | UserToMediaItemConnectionEdge | NodeWithFeaturedImageToMediaItemConnectionEdge | NodeWithRevisionsToContentNodeConnectionEdge | PageToCommentConnectionEdge | PageToPreviewConnectionEdge | PageToRevisionConnectionEdge | UserToPageConnectionEdge | PostToPostConnectionEdge | PostToCategoryConnectionEdge | PostToCommentConnectionEdge | PostToParentConnectionEdge | PostFormatToContentNodeConnectionEdge | PostFormatToPostConnectionEdge | PostFormatToTaxonomyConnectionEdge | PostToPostFormatConnectionEdge | PostToPreviewConnectionEdge | PostToRevisionConnectionEdge | TagToContentNodeConnectionEdge | TagToPostConnectionEdge | TagToTaxonomyConnectionEdge | PostToTagConnectionEdge | PostToTermNodeConnectionEdge | UserToPostConnectionEdge | UserToRevisionsConnectionEdge | UserToUserRoleConnectionEdge | CategoryToContentNodeConnectionEdge | CategoryToParentCategoryConnectionEdge | CategoryToPostConnectionEdge | CategoryToTaxonomyConnectionEdge | RootQueryToCategoryConnectionEdge | RootQueryToCommentConnectionEdge | RootQueryToContentNodeConnectionEdge | RootQueryToContentTypeConnectionEdge | RootQueryToMediaItemConnectionEdge | MenuItemToMenuItemConnectionEdge | MenuItemToMenuItemLinkableConnectionEdge | MenuItemToMenuConnectionEdge | MenuToMenuItemConnectionEdge | RootQueryToMenuItemConnectionEdge | RootQueryToMenuConnectionEdge | RootQueryToPageConnectionEdge | RootQueryToPluginConnectionEdge | RootQueryToPostFormatConnectionEdge | RootQueryToPostConnectionEdge | RootQueryToEnqueuedScriptConnectionEdge | RootQueryToEnqueuedStylesheetConnectionEdge | RootQueryToRevisionsConnectionEdge | RootQueryToTagConnectionEdge | RootQueryToTaxonomyConnectionEdge | RootQueryToTermNodeConnectionEdge | RootQueryToThemeConnectionEdge | RootQueryToUserRoleConnectionEdge | RootQueryToUserConnectionEdge) & { __isUnion?: true }
+export type Edge = (TermNodeToEnqueuedScriptConnectionEdge | TermNodeToEnqueuedStylesheetConnectionEdge | CategoryToAncestorsCategoryConnectionEdge | CategoryToCategoryConnectionEdge | ContentNodeToContentTypeConnectionEdge | TaxonomyToContentTypeConnectionEdge | TaxonomyToTermNodeConnectionEdge | ContentTypeToTaxonomyConnectionEdge | ContentTypeToContentNodeConnectionEdge | ContentNodeToEditLockConnectionEdge | CommentToCommenterConnectionEdge | CommentToContentNodeConnectionEdge | CommentToParentCommentConnectionEdge | CommentToCommentConnectionEdge | UserToCommentConnectionEdge | UserToEnqueuedScriptConnectionEdge | UserToEnqueuedStylesheetConnectionEdge | NodeWithAuthorToUserConnectionEdge | HierarchicalContentNodeToContentNodeAncestorsConnectionEdge | HierarchicalContentNodeToContentNodeChildrenConnectionEdge | ContentNodeToEnqueuedScriptConnectionEdge | ContentNodeToEnqueuedStylesheetConnectionEdge | ContentNodeToEditLastConnectionEdge | HierarchicalContentNodeToParentContentNodeConnectionEdge | MediaItemToCommentConnectionEdge | UserToMediaItemConnectionEdge | NodeWithFeaturedImageToMediaItemConnectionEdge | NodeWithRevisionsToContentNodeConnectionEdge | PageToCommentConnectionEdge | PageToPreviewConnectionEdge | PageToRevisionConnectionEdge | UserToPageConnectionEdge | PostToPostConnectionEdge | PostToCategoryConnectionEdge | PostToCommentConnectionEdge | PostToParentConnectionEdge | PostFormatToContentNodeConnectionEdge | PostFormatToPostConnectionEdge | PostFormatToTaxonomyConnectionEdge | PostToPostFormatConnectionEdge | PostToPreviewConnectionEdge | RelatedPostsConnectionEdge | PostToRevisionConnectionEdge | TagToContentNodeConnectionEdge | TagToPostConnectionEdge | TagToTaxonomyConnectionEdge | PostToTagConnectionEdge | PostToTermNodeConnectionEdge | UserToPostConnectionEdge | UserToRevisionsConnectionEdge | UserToUserRoleConnectionEdge | CategoryToContentNodeConnectionEdge | CategoryToParentCategoryConnectionEdge | CategoryToPostConnectionEdge | CategoryToTaxonomyConnectionEdge | RootQueryToCategoryConnectionEdge | RootQueryToCommentConnectionEdge | RootQueryToContentNodeConnectionEdge | RootQueryToContentTypeConnectionEdge | RootQueryToMediaItemConnectionEdge | MenuItemToMenuItemConnectionEdge | MenuItemToMenuItemLinkableConnectionEdge | MenuItemToMenuConnectionEdge | MenuToMenuItemConnectionEdge | RootQueryToMenuItemConnectionEdge | RootQueryToMenuConnectionEdge | RootQueryToPageConnectionEdge | RootQueryToPluginConnectionEdge | RootQueryToPostFormatConnectionEdge | RootQueryToPostConnectionEdge | RootQueryToEnqueuedScriptConnectionEdge | RootQueryToEnqueuedStylesheetConnectionEdge | RootQueryToRevisionsConnectionEdge | RootQueryToTagConnectionEdge | RootQueryToTaxonomyConnectionEdge | RootQueryToTermNodeConnectionEdge | RootQueryToThemeConnectionEdge | RootQueryToUserRoleConnectionEdge | RootQueryToUserConnectionEdge) & { __isUnion?: true }
 
 
 /** An object with a globally unique identifier. All objects that can be identified by a unique ID implement this interface. */
@@ -204,7 +204,7 @@ export type Node = (Category | EnqueuedScript | EnqueuedStylesheet | ContentType
 
 
 /** Metadata for cursor-based pagination. Provides cursors for continuing pagination and boolean flags indicating if more items exist in either direction. */
-export type PageInfo = (TermNodeToEnqueuedScriptConnectionPageInfo | TermNodeToEnqueuedStylesheetConnectionPageInfo | CategoryToAncestorsCategoryConnectionPageInfo | CategoryToCategoryConnectionPageInfo | TaxonomyToContentTypeConnectionPageInfo | TaxonomyToTermNodeConnectionPageInfo | ContentTypeToTaxonomyConnectionPageInfo | ContentTypeToContentNodeConnectionPageInfo | CommentToCommentConnectionPageInfo | UserToCommentConnectionPageInfo | UserToEnqueuedScriptConnectionPageInfo | UserToEnqueuedStylesheetConnectionPageInfo | HierarchicalContentNodeToContentNodeAncestorsConnectionPageInfo | HierarchicalContentNodeToContentNodeChildrenConnectionPageInfo | ContentNodeToEnqueuedScriptConnectionPageInfo | ContentNodeToEnqueuedStylesheetConnectionPageInfo | MediaItemToCommentConnectionPageInfo | UserToMediaItemConnectionPageInfo | PageToCommentConnectionPageInfo | PageToRevisionConnectionPageInfo | UserToPageConnectionPageInfo | PostToPostConnectionPageInfo | PostToCategoryConnectionPageInfo | PostToCommentConnectionPageInfo | PostFormatToContentNodeConnectionPageInfo | PostFormatToPostConnectionPageInfo | PostToPostFormatConnectionPageInfo | PostToRevisionConnectionPageInfo | TagToContentNodeConnectionPageInfo | TagToPostConnectionPageInfo | PostToTagConnectionPageInfo | PostToTermNodeConnectionPageInfo | UserToPostConnectionPageInfo | UserToRevisionsConnectionPageInfo | UserToUserRoleConnectionPageInfo | CategoryToContentNodeConnectionPageInfo | CategoryToPostConnectionPageInfo | RootQueryToCategoryConnectionPageInfo | RootQueryToCommentConnectionPageInfo | RootQueryToContentNodeConnectionPageInfo | RootQueryToContentTypeConnectionPageInfo | RootQueryToMediaItemConnectionPageInfo | MenuItemToMenuItemConnectionPageInfo | MenuToMenuItemConnectionPageInfo | RootQueryToMenuItemConnectionPageInfo | RootQueryToMenuConnectionPageInfo | RootQueryToPageConnectionPageInfo | RootQueryToPluginConnectionPageInfo | RootQueryToPostFormatConnectionPageInfo | RootQueryToPostConnectionPageInfo | RootQueryToEnqueuedScriptConnectionPageInfo | RootQueryToEnqueuedStylesheetConnectionPageInfo | RootQueryToRevisionsConnectionPageInfo | RootQueryToTagConnectionPageInfo | RootQueryToTaxonomyConnectionPageInfo | RootQueryToTermNodeConnectionPageInfo | RootQueryToThemeConnectionPageInfo | RootQueryToUserRoleConnectionPageInfo | RootQueryToUserConnectionPageInfo) & { __isUnion?: true }
+export type PageInfo = (TermNodeToEnqueuedScriptConnectionPageInfo | TermNodeToEnqueuedStylesheetConnectionPageInfo | CategoryToAncestorsCategoryConnectionPageInfo | CategoryToCategoryConnectionPageInfo | TaxonomyToContentTypeConnectionPageInfo | TaxonomyToTermNodeConnectionPageInfo | ContentTypeToTaxonomyConnectionPageInfo | ContentTypeToContentNodeConnectionPageInfo | CommentToCommentConnectionPageInfo | UserToCommentConnectionPageInfo | UserToEnqueuedScriptConnectionPageInfo | UserToEnqueuedStylesheetConnectionPageInfo | HierarchicalContentNodeToContentNodeAncestorsConnectionPageInfo | HierarchicalContentNodeToContentNodeChildrenConnectionPageInfo | ContentNodeToEnqueuedScriptConnectionPageInfo | ContentNodeToEnqueuedStylesheetConnectionPageInfo | MediaItemToCommentConnectionPageInfo | UserToMediaItemConnectionPageInfo | PageToCommentConnectionPageInfo | PageToRevisionConnectionPageInfo | UserToPageConnectionPageInfo | PostToPostConnectionPageInfo | PostToCategoryConnectionPageInfo | PostToCommentConnectionPageInfo | PostFormatToContentNodeConnectionPageInfo | PostFormatToPostConnectionPageInfo | PostToPostFormatConnectionPageInfo | RelatedPostsConnectionPageInfo | PostToRevisionConnectionPageInfo | TagToContentNodeConnectionPageInfo | TagToPostConnectionPageInfo | PostToTagConnectionPageInfo | PostToTermNodeConnectionPageInfo | UserToPostConnectionPageInfo | UserToRevisionsConnectionPageInfo | UserToUserRoleConnectionPageInfo | CategoryToContentNodeConnectionPageInfo | CategoryToPostConnectionPageInfo | RootQueryToCategoryConnectionPageInfo | RootQueryToCommentConnectionPageInfo | RootQueryToContentNodeConnectionPageInfo | RootQueryToContentTypeConnectionPageInfo | RootQueryToMediaItemConnectionPageInfo | MenuItemToMenuItemConnectionPageInfo | MenuToMenuItemConnectionPageInfo | RootQueryToMenuItemConnectionPageInfo | RootQueryToMenuConnectionPageInfo | RootQueryToPageConnectionPageInfo | RootQueryToPluginConnectionPageInfo | RootQueryToPostFormatConnectionPageInfo | RootQueryToPostConnectionPageInfo | RootQueryToEnqueuedScriptConnectionPageInfo | RootQueryToEnqueuedStylesheetConnectionPageInfo | RootQueryToRevisionsConnectionPageInfo | RootQueryToTagConnectionPageInfo | RootQueryToTaxonomyConnectionPageInfo | RootQueryToTermNodeConnectionPageInfo | RootQueryToThemeConnectionPageInfo | RootQueryToUserRoleConnectionPageInfo | RootQueryToUserConnectionPageInfo) & { __isUnion?: true }
 
 
 /** Represents a connection to a category. Contains both the category Node and metadata about the relationship. */
@@ -363,7 +363,7 @@ export type EnqueuedScriptConnectionPageInfo = (TermNodeToEnqueuedScriptConnecti
 
 
 /** Metadata for cursor-based pagination. Provides cursors for continuing pagination and boolean flags indicating if more items exist in either direction. */
-export type WPPageInfo = (TermNodeToEnqueuedScriptConnectionPageInfo | TermNodeToEnqueuedStylesheetConnectionPageInfo | CategoryToAncestorsCategoryConnectionPageInfo | CategoryToCategoryConnectionPageInfo | TaxonomyToContentTypeConnectionPageInfo | TaxonomyToTermNodeConnectionPageInfo | ContentTypeToTaxonomyConnectionPageInfo | ContentTypeToContentNodeConnectionPageInfo | CommentToCommentConnectionPageInfo | UserToCommentConnectionPageInfo | UserToEnqueuedScriptConnectionPageInfo | UserToEnqueuedStylesheetConnectionPageInfo | HierarchicalContentNodeToContentNodeAncestorsConnectionPageInfo | HierarchicalContentNodeToContentNodeChildrenConnectionPageInfo | ContentNodeToEnqueuedScriptConnectionPageInfo | ContentNodeToEnqueuedStylesheetConnectionPageInfo | MediaItemToCommentConnectionPageInfo | UserToMediaItemConnectionPageInfo | PageToCommentConnectionPageInfo | PageToRevisionConnectionPageInfo | UserToPageConnectionPageInfo | PostToPostConnectionPageInfo | PostToCategoryConnectionPageInfo | PostToCommentConnectionPageInfo | PostFormatToContentNodeConnectionPageInfo | PostFormatToPostConnectionPageInfo | PostToPostFormatConnectionPageInfo | PostToRevisionConnectionPageInfo | TagToContentNodeConnectionPageInfo | TagToPostConnectionPageInfo | PostToTagConnectionPageInfo | PostToTermNodeConnectionPageInfo | UserToPostConnectionPageInfo | UserToRevisionsConnectionPageInfo | UserToUserRoleConnectionPageInfo | CategoryToContentNodeConnectionPageInfo | CategoryToPostConnectionPageInfo | RootQueryToCategoryConnectionPageInfo | RootQueryToCommentConnectionPageInfo | RootQueryToContentNodeConnectionPageInfo | RootQueryToContentTypeConnectionPageInfo | RootQueryToMediaItemConnectionPageInfo | MenuItemToMenuItemConnectionPageInfo | MenuToMenuItemConnectionPageInfo | RootQueryToMenuItemConnectionPageInfo | RootQueryToMenuConnectionPageInfo | RootQueryToPageConnectionPageInfo | RootQueryToPluginConnectionPageInfo | RootQueryToPostFormatConnectionPageInfo | RootQueryToPostConnectionPageInfo | RootQueryToEnqueuedScriptConnectionPageInfo | RootQueryToEnqueuedStylesheetConnectionPageInfo | RootQueryToRevisionsConnectionPageInfo | RootQueryToTagConnectionPageInfo | RootQueryToTaxonomyConnectionPageInfo | RootQueryToTermNodeConnectionPageInfo | RootQueryToThemeConnectionPageInfo | RootQueryToUserRoleConnectionPageInfo | RootQueryToUserConnectionPageInfo) & { __isUnion?: true }
+export type WPPageInfo = (TermNodeToEnqueuedScriptConnectionPageInfo | TermNodeToEnqueuedStylesheetConnectionPageInfo | CategoryToAncestorsCategoryConnectionPageInfo | CategoryToCategoryConnectionPageInfo | TaxonomyToContentTypeConnectionPageInfo | TaxonomyToTermNodeConnectionPageInfo | ContentTypeToTaxonomyConnectionPageInfo | ContentTypeToContentNodeConnectionPageInfo | CommentToCommentConnectionPageInfo | UserToCommentConnectionPageInfo | UserToEnqueuedScriptConnectionPageInfo | UserToEnqueuedStylesheetConnectionPageInfo | HierarchicalContentNodeToContentNodeAncestorsConnectionPageInfo | HierarchicalContentNodeToContentNodeChildrenConnectionPageInfo | ContentNodeToEnqueuedScriptConnectionPageInfo | ContentNodeToEnqueuedStylesheetConnectionPageInfo | MediaItemToCommentConnectionPageInfo | UserToMediaItemConnectionPageInfo | PageToCommentConnectionPageInfo | PageToRevisionConnectionPageInfo | UserToPageConnectionPageInfo | PostToPostConnectionPageInfo | PostToCategoryConnectionPageInfo | PostToCommentConnectionPageInfo | PostFormatToContentNodeConnectionPageInfo | PostFormatToPostConnectionPageInfo | PostToPostFormatConnectionPageInfo | RelatedPostsConnectionPageInfo | PostToRevisionConnectionPageInfo | TagToContentNodeConnectionPageInfo | TagToPostConnectionPageInfo | PostToTagConnectionPageInfo | PostToTermNodeConnectionPageInfo | UserToPostConnectionPageInfo | UserToRevisionsConnectionPageInfo | UserToUserRoleConnectionPageInfo | CategoryToContentNodeConnectionPageInfo | CategoryToPostConnectionPageInfo | RootQueryToCategoryConnectionPageInfo | RootQueryToCommentConnectionPageInfo | RootQueryToContentNodeConnectionPageInfo | RootQueryToContentTypeConnectionPageInfo | RootQueryToMediaItemConnectionPageInfo | MenuItemToMenuItemConnectionPageInfo | MenuToMenuItemConnectionPageInfo | RootQueryToMenuItemConnectionPageInfo | RootQueryToMenuConnectionPageInfo | RootQueryToPageConnectionPageInfo | RootQueryToPluginConnectionPageInfo | RootQueryToPostFormatConnectionPageInfo | RootQueryToPostConnectionPageInfo | RootQueryToEnqueuedScriptConnectionPageInfo | RootQueryToEnqueuedStylesheetConnectionPageInfo | RootQueryToRevisionsConnectionPageInfo | RootQueryToTagConnectionPageInfo | RootQueryToTaxonomyConnectionPageInfo | RootQueryToTermNodeConnectionPageInfo | RootQueryToThemeConnectionPageInfo | RootQueryToUserRoleConnectionPageInfo | RootQueryToUserConnectionPageInfo) & { __isUnion?: true }
 
 
 /** The page info SEO details */
@@ -1884,7 +1884,7 @@ export interface MediaItemToCommentConnectionPageInfo {
 
 
 /** Predefined image size variations. Represents the standard image dimensions available for media assets. */
-export type MediaItemSizeEnum = 'LARGE' | 'MEDIUM' | 'MEDIUM_LARGE' | 'THUMBNAIL' | '_1536X1536' | '_2048X2048'
+export type MediaItemSizeEnum = 'LARGE' | 'MEDIUM' | 'MEDIUM_LARGE' | 'THUMBNAIL' | 'YARPP_THUMBNAIL' | '_1536X1536' | '_2048X2048'
 
 
 /** File details for a Media Item */
@@ -2295,11 +2295,11 @@ export interface UserToPostConnection {
 
 
 /** A paginated collection of post Nodes, Supports cursor-based pagination and filtering to efficiently retrieve sets of post Nodes */
-export type PostConnection = (UserToPostConnection | PostToPostConnection | PostFormatToPostConnection | PostToRevisionConnection | TagToPostConnection | CategoryToPostConnection | RootQueryToPostConnection) & { __isUnion?: true }
+export type PostConnection = (UserToPostConnection | PostToPostConnection | PostFormatToPostConnection | RelatedPostsConnection | PostToRevisionConnection | TagToPostConnection | CategoryToPostConnection | RootQueryToPostConnection) & { __isUnion?: true }
 
 
 /** Represents a connection to a post. Contains both the post Node and metadata about the relationship. */
-export type PostConnectionEdge = (PostToPostConnectionEdge | PostToParentConnectionEdge | PostFormatToPostConnectionEdge | PostToPreviewConnectionEdge | PostToRevisionConnectionEdge | TagToPostConnectionEdge | UserToPostConnectionEdge | CategoryToPostConnectionEdge | RootQueryToPostConnectionEdge) & { __isUnion?: true }
+export type PostConnectionEdge = (PostToPostConnectionEdge | PostToParentConnectionEdge | PostFormatToPostConnectionEdge | PostToPreviewConnectionEdge | RelatedPostsConnectionEdge | PostToRevisionConnectionEdge | TagToPostConnectionEdge | UserToPostConnectionEdge | CategoryToPostConnectionEdge | RootQueryToPostConnectionEdge) & { __isUnion?: true }
 
 
 /** A chronological content entry typically used for blog posts, news articles, or similar date-based content. */
@@ -2409,6 +2409,8 @@ export interface Post {
     previewRevisionDatabaseId: (Scalars['Int'] | null)
     /** Whether the object is a node in the preview state */
     previewRevisionId: (Scalars['ID'] | null)
+    /** Connection between the Post type and the Post type */
+    relatedPosts: (RelatedPostsConnection | null)
     /** If the current node is a revision, this field exposes the node this is a revision of. Returns null if the node is not a revision of another node. */
     revisionOf: (NodeWithRevisionsToContentNodeConnectionEdge | null)
     /** Connection between the Post type and the post type */
@@ -2488,7 +2490,7 @@ export interface PostToPostConnectionPageInfo {
 
 
 /** Pagination metadata specific to &quot;PostConnectionEdge&quot; collections. Provides cursors and flags for navigating through sets of &quot;PostConnectionEdge&quot; Nodes. */
-export type PostConnectionPageInfo = (PostToPostConnectionPageInfo | PostFormatToPostConnectionPageInfo | PostToRevisionConnectionPageInfo | TagToPostConnectionPageInfo | UserToPostConnectionPageInfo | CategoryToPostConnectionPageInfo | RootQueryToPostConnectionPageInfo) & { __isUnion?: true }
+export type PostConnectionPageInfo = (PostToPostConnectionPageInfo | PostFormatToPostConnectionPageInfo | RelatedPostsConnectionPageInfo | PostToRevisionConnectionPageInfo | TagToPostConnectionPageInfo | UserToPostConnectionPageInfo | CategoryToPostConnectionPageInfo | RootQueryToPostConnectionPageInfo) & { __isUnion?: true }
 
 
 /** Connection between the Post type and the category type */
@@ -2823,6 +2825,44 @@ export interface PostToPreviewConnectionEdge {
     /** The node of the connection, without the edges */
     node: Post
     __typename: 'PostToPreviewConnectionEdge'
+}
+
+
+/** Connection between the Post type and the Post type */
+export interface RelatedPostsConnection {
+    /** Edges for the RelatedPostsConnection connection */
+    edges: RelatedPostsConnectionEdge[]
+    /** The nodes of the connection, without the edges */
+    nodes: Post[]
+    /** Information about pagination in a connection. */
+    pageInfo: RelatedPostsConnectionPageInfo
+    __typename: 'RelatedPostsConnection'
+}
+
+
+/** An edge in a connection */
+export interface RelatedPostsConnectionEdge {
+    /** A cursor for use in pagination */
+    cursor: (Scalars['String'] | null)
+    /** The item at the end of the edge */
+    node: Post
+    __typename: 'RelatedPostsConnectionEdge'
+}
+
+
+/** Pagination metadata specific to &quot;RelatedPostsConnection&quot; collections. Provides cursors and flags for navigating through sets of RelatedPostsConnection Nodes. */
+export interface RelatedPostsConnectionPageInfo {
+    /** When paginating forwards, the cursor to continue. */
+    endCursor: (Scalars['String'] | null)
+    /** When paginating forwards, are there more items? */
+    hasNextPage: Scalars['Boolean']
+    /** When paginating backwards, are there more items? */
+    hasPreviousPage: Scalars['Boolean']
+    /** Raw schema for page */
+    seo: (SEOPostTypePageInfo | null)
+    /** When paginating backwards, the cursor to continue. */
+    startCursor: (Scalars['String'] | null)
+    __typename: 'RelatedPostsConnectionPageInfo'
 }
 
 
@@ -5780,6 +5820,7 @@ export interface ConnectionGenqlSelection{
     on_PostToPostFormatConnection?: PostToPostFormatConnectionGenqlSelection
     on_PostFormatToContentNodeConnection?: PostFormatToContentNodeConnectionGenqlSelection
     on_PostFormatToPostConnection?: PostFormatToPostConnectionGenqlSelection
+    on_RelatedPostsConnection?: RelatedPostsConnectionGenqlSelection
     on_PostToRevisionConnection?: PostToRevisionConnectionGenqlSelection
     on_PostToTagConnection?: PostToTagConnectionGenqlSelection
     on_TagToContentNodeConnection?: TagToContentNodeConnectionGenqlSelection
@@ -5861,6 +5902,7 @@ export interface EdgeGenqlSelection{
     on_PostFormatToTaxonomyConnectionEdge?: PostFormatToTaxonomyConnectionEdgeGenqlSelection
     on_PostToPostFormatConnectionEdge?: PostToPostFormatConnectionEdgeGenqlSelection
     on_PostToPreviewConnectionEdge?: PostToPreviewConnectionEdgeGenqlSelection
+    on_RelatedPostsConnectionEdge?: RelatedPostsConnectionEdgeGenqlSelection
     on_PostToRevisionConnectionEdge?: PostToRevisionConnectionEdgeGenqlSelection
     on_TagToContentNodeConnectionEdge?: TagToContentNodeConnectionEdgeGenqlSelection
     on_TagToPostConnectionEdge?: TagToPostConnectionEdgeGenqlSelection
@@ -5967,6 +6009,7 @@ export interface PageInfoGenqlSelection{
     on_PostFormatToContentNodeConnectionPageInfo?: PostFormatToContentNodeConnectionPageInfoGenqlSelection
     on_PostFormatToPostConnectionPageInfo?: PostFormatToPostConnectionPageInfoGenqlSelection
     on_PostToPostFormatConnectionPageInfo?: PostToPostFormatConnectionPageInfoGenqlSelection
+    on_RelatedPostsConnectionPageInfo?: RelatedPostsConnectionPageInfoGenqlSelection
     on_PostToRevisionConnectionPageInfo?: PostToRevisionConnectionPageInfoGenqlSelection
     on_TagToContentNodeConnectionPageInfo?: TagToContentNodeConnectionPageInfoGenqlSelection
     on_TagToPostConnectionPageInfo?: TagToPostConnectionPageInfoGenqlSelection
@@ -6419,6 +6462,7 @@ export interface WPPageInfoGenqlSelection{
     on_PostFormatToContentNodeConnectionPageInfo?: PostFormatToContentNodeConnectionPageInfoGenqlSelection
     on_PostFormatToPostConnectionPageInfo?: PostFormatToPostConnectionPageInfoGenqlSelection
     on_PostToPostFormatConnectionPageInfo?: PostToPostFormatConnectionPageInfoGenqlSelection
+    on_RelatedPostsConnectionPageInfo?: RelatedPostsConnectionPageInfoGenqlSelection
     on_PostToRevisionConnectionPageInfo?: PostToRevisionConnectionPageInfoGenqlSelection
     on_TagToContentNodeConnectionPageInfo?: TagToContentNodeConnectionPageInfoGenqlSelection
     on_TagToPostConnectionPageInfo?: TagToPostConnectionPageInfoGenqlSelection
@@ -10296,6 +10340,7 @@ export interface PostConnectionGenqlSelection{
     on_UserToPostConnection?: UserToPostConnectionGenqlSelection
     on_PostToPostConnection?: PostToPostConnectionGenqlSelection
     on_PostFormatToPostConnection?: PostFormatToPostConnectionGenqlSelection
+    on_RelatedPostsConnection?: RelatedPostsConnectionGenqlSelection
     on_PostToRevisionConnection?: PostToRevisionConnectionGenqlSelection
     on_TagToPostConnection?: TagToPostConnectionGenqlSelection
     on_CategoryToPostConnection?: CategoryToPostConnectionGenqlSelection
@@ -10315,6 +10360,7 @@ export interface PostConnectionEdgeGenqlSelection{
     on_PostToParentConnectionEdge?: PostToParentConnectionEdgeGenqlSelection
     on_PostFormatToPostConnectionEdge?: PostFormatToPostConnectionEdgeGenqlSelection
     on_PostToPreviewConnectionEdge?: PostToPreviewConnectionEdgeGenqlSelection
+    on_RelatedPostsConnectionEdge?: RelatedPostsConnectionEdgeGenqlSelection
     on_PostToRevisionConnectionEdge?: PostToRevisionConnectionEdgeGenqlSelection
     on_TagToPostConnectionEdge?: TagToPostConnectionEdgeGenqlSelection
     on_UserToPostConnectionEdge?: UserToPostConnectionEdgeGenqlSelection
@@ -10490,6 +10536,18 @@ export interface PostGenqlSelection{
     previewRevisionDatabaseId?: boolean | number
     /** Whether the object is a node in the preview state */
     previewRevisionId?: boolean | number
+    /** Connection between the Post type and the Post type */
+    relatedPosts?: (RelatedPostsConnectionGenqlSelection & { __args?: {
+    /** The number of items to return after the referenced "after" cursor */
+    first?: (Scalars['Int'] | null), 
+    /** The number of items to return before the referenced "before" cursor */
+    last?: (Scalars['Int'] | null), 
+    /** Cursor used along with the "first" argument to reference where in the dataset to get data */
+    after?: (Scalars['String'] | null), 
+    /** Cursor used along with the "last" argument to reference where in the dataset to get data */
+    before?: (Scalars['String'] | null), 
+    /** Arguments for filtering the connection */
+    where?: (RelatedPostsConnectionWhereArgs | null)} })
     /** If the current node is a revision, this field exposes the node this is a revision of. Returns null if the node is not a revision of another node. */
     revisionOf?: NodeWithRevisionsToContentNodeConnectionEdgeGenqlSelection
     /** Connection between the Post type and the post type */
@@ -10640,6 +10698,7 @@ export interface PostConnectionPageInfoGenqlSelection{
     startCursor?: boolean | number
     on_PostToPostConnectionPageInfo?: PostToPostConnectionPageInfoGenqlSelection
     on_PostFormatToPostConnectionPageInfo?: PostFormatToPostConnectionPageInfoGenqlSelection
+    on_RelatedPostsConnectionPageInfo?: RelatedPostsConnectionPageInfoGenqlSelection
     on_PostToRevisionConnectionPageInfo?: PostToRevisionConnectionPageInfoGenqlSelection
     on_TagToPostConnectionPageInfo?: TagToPostConnectionPageInfoGenqlSelection
     on_UserToPostConnectionPageInfo?: UserToPostConnectionPageInfoGenqlSelection
@@ -11324,6 +11383,53 @@ export interface PostToPreviewConnectionEdgeGenqlSelection{
     cursor?: boolean | number
     /** The node of the connection, without the edges */
     node?: PostGenqlSelection
+    __typename?: boolean | number
+    __scalar?: boolean | number
+}
+
+
+/** Arguments for filtering the RelatedPostsConnection connection */
+export interface RelatedPostsConnectionWhereArgs {
+/** Override's YARPP setting's "Maximum number of related posts." The maximum number is 20. */
+limit?: (Scalars['Int'] | null)}
+
+
+/** Connection between the Post type and the Post type */
+export interface RelatedPostsConnectionGenqlSelection{
+    /** Edges for the RelatedPostsConnection connection */
+    edges?: RelatedPostsConnectionEdgeGenqlSelection
+    /** The nodes of the connection, without the edges */
+    nodes?: PostGenqlSelection
+    /** Information about pagination in a connection. */
+    pageInfo?: RelatedPostsConnectionPageInfoGenqlSelection
+    __typename?: boolean | number
+    __scalar?: boolean | number
+}
+
+
+/** An edge in a connection */
+export interface RelatedPostsConnectionEdgeGenqlSelection{
+    /** A cursor for use in pagination */
+    cursor?: boolean | number
+    /** The item at the end of the edge */
+    node?: PostGenqlSelection
+    __typename?: boolean | number
+    __scalar?: boolean | number
+}
+
+
+/** Pagination metadata specific to &quot;RelatedPostsConnection&quot; collections. Provides cursors and flags for navigating through sets of RelatedPostsConnection Nodes. */
+export interface RelatedPostsConnectionPageInfoGenqlSelection{
+    /** When paginating forwards, the cursor to continue. */
+    endCursor?: boolean | number
+    /** When paginating forwards, are there more items? */
+    hasNextPage?: boolean | number
+    /** When paginating backwards, are there more items? */
+    hasPreviousPage?: boolean | number
+    /** Raw schema for page */
+    seo?: SEOPostTypePageInfoGenqlSelection
+    /** When paginating backwards, the cursor to continue. */
+    startCursor?: boolean | number
     __typename?: boolean | number
     __scalar?: boolean | number
 }
@@ -15803,7 +15909,7 @@ export type MutationGenqlSelection = RootMutationGenqlSelection
     
 
 
-    const Connection_possibleTypes: string[] = ['RootQueryToCategoryConnection','TermNodeToEnqueuedScriptConnection','TermNodeToEnqueuedStylesheetConnection','CategoryToAncestorsCategoryConnection','CategoryToCategoryConnection','CategoryToContentNodeConnection','ContentTypeToTaxonomyConnection','TaxonomyToContentTypeConnection','TaxonomyToTermNodeConnection','ContentTypeToContentNodeConnection','UserToCommentConnection','CommentToCommentConnection','UserToEnqueuedScriptConnection','UserToEnqueuedStylesheetConnection','UserToMediaItemConnection','HierarchicalContentNodeToContentNodeAncestorsConnection','HierarchicalContentNodeToContentNodeChildrenConnection','ContentNodeToEnqueuedScriptConnection','ContentNodeToEnqueuedStylesheetConnection','MediaItemToCommentConnection','UserToPageConnection','PageToCommentConnection','PageToRevisionConnection','UserToPostConnection','PostToPostConnection','PostToCategoryConnection','PostToCommentConnection','PostToPostFormatConnection','PostFormatToContentNodeConnection','PostFormatToPostConnection','PostToRevisionConnection','PostToTagConnection','TagToContentNodeConnection','TagToPostConnection','PostToTermNodeConnection','UserToRevisionsConnection','UserToUserRoleConnection','CategoryToPostConnection','RootQueryToCommentConnection','RootQueryToContentNodeConnection','RootQueryToContentTypeConnection','RootQueryToMediaItemConnection','MenuToMenuItemConnection','MenuItemToMenuItemConnection','RootQueryToMenuItemConnection','RootQueryToMenuConnection','RootQueryToPageConnection','RootQueryToPluginConnection','RootQueryToPostFormatConnection','RootQueryToPostConnection','RootQueryToEnqueuedScriptConnection','RootQueryToEnqueuedStylesheetConnection','RootQueryToRevisionsConnection','RootQueryToTagConnection','RootQueryToTaxonomyConnection','RootQueryToTermNodeConnection','RootQueryToThemeConnection','RootQueryToUserRoleConnection','RootQueryToUserConnection']
+    const Connection_possibleTypes: string[] = ['RootQueryToCategoryConnection','TermNodeToEnqueuedScriptConnection','TermNodeToEnqueuedStylesheetConnection','CategoryToAncestorsCategoryConnection','CategoryToCategoryConnection','CategoryToContentNodeConnection','ContentTypeToTaxonomyConnection','TaxonomyToContentTypeConnection','TaxonomyToTermNodeConnection','ContentTypeToContentNodeConnection','UserToCommentConnection','CommentToCommentConnection','UserToEnqueuedScriptConnection','UserToEnqueuedStylesheetConnection','UserToMediaItemConnection','HierarchicalContentNodeToContentNodeAncestorsConnection','HierarchicalContentNodeToContentNodeChildrenConnection','ContentNodeToEnqueuedScriptConnection','ContentNodeToEnqueuedStylesheetConnection','MediaItemToCommentConnection','UserToPageConnection','PageToCommentConnection','PageToRevisionConnection','UserToPostConnection','PostToPostConnection','PostToCategoryConnection','PostToCommentConnection','PostToPostFormatConnection','PostFormatToContentNodeConnection','PostFormatToPostConnection','RelatedPostsConnection','PostToRevisionConnection','PostToTagConnection','TagToContentNodeConnection','TagToPostConnection','PostToTermNodeConnection','UserToRevisionsConnection','UserToUserRoleConnection','CategoryToPostConnection','RootQueryToCommentConnection','RootQueryToContentNodeConnection','RootQueryToContentTypeConnection','RootQueryToMediaItemConnection','MenuToMenuItemConnection','MenuItemToMenuItemConnection','RootQueryToMenuItemConnection','RootQueryToMenuConnection','RootQueryToPageConnection','RootQueryToPluginConnection','RootQueryToPostFormatConnection','RootQueryToPostConnection','RootQueryToEnqueuedScriptConnection','RootQueryToEnqueuedStylesheetConnection','RootQueryToRevisionsConnection','RootQueryToTagConnection','RootQueryToTaxonomyConnection','RootQueryToTermNodeConnection','RootQueryToThemeConnection','RootQueryToUserRoleConnection','RootQueryToUserConnection']
     export const isConnection = (obj?: { __typename?: any } | null): obj is Connection => {
       if (!obj?.__typename) throw new Error('__typename is missing in "isConnection"')
       return Connection_possibleTypes.includes(obj.__typename)
@@ -15811,7 +15917,7 @@ export type MutationGenqlSelection = RootMutationGenqlSelection
     
 
 
-    const Edge_possibleTypes: string[] = ['TermNodeToEnqueuedScriptConnectionEdge','TermNodeToEnqueuedStylesheetConnectionEdge','CategoryToAncestorsCategoryConnectionEdge','CategoryToCategoryConnectionEdge','ContentNodeToContentTypeConnectionEdge','TaxonomyToContentTypeConnectionEdge','TaxonomyToTermNodeConnectionEdge','ContentTypeToTaxonomyConnectionEdge','ContentTypeToContentNodeConnectionEdge','ContentNodeToEditLockConnectionEdge','CommentToCommenterConnectionEdge','CommentToContentNodeConnectionEdge','CommentToParentCommentConnectionEdge','CommentToCommentConnectionEdge','UserToCommentConnectionEdge','UserToEnqueuedScriptConnectionEdge','UserToEnqueuedStylesheetConnectionEdge','NodeWithAuthorToUserConnectionEdge','HierarchicalContentNodeToContentNodeAncestorsConnectionEdge','HierarchicalContentNodeToContentNodeChildrenConnectionEdge','ContentNodeToEnqueuedScriptConnectionEdge','ContentNodeToEnqueuedStylesheetConnectionEdge','ContentNodeToEditLastConnectionEdge','HierarchicalContentNodeToParentContentNodeConnectionEdge','MediaItemToCommentConnectionEdge','UserToMediaItemConnectionEdge','NodeWithFeaturedImageToMediaItemConnectionEdge','NodeWithRevisionsToContentNodeConnectionEdge','PageToCommentConnectionEdge','PageToPreviewConnectionEdge','PageToRevisionConnectionEdge','UserToPageConnectionEdge','PostToPostConnectionEdge','PostToCategoryConnectionEdge','PostToCommentConnectionEdge','PostToParentConnectionEdge','PostFormatToContentNodeConnectionEdge','PostFormatToPostConnectionEdge','PostFormatToTaxonomyConnectionEdge','PostToPostFormatConnectionEdge','PostToPreviewConnectionEdge','PostToRevisionConnectionEdge','TagToContentNodeConnectionEdge','TagToPostConnectionEdge','TagToTaxonomyConnectionEdge','PostToTagConnectionEdge','PostToTermNodeConnectionEdge','UserToPostConnectionEdge','UserToRevisionsConnectionEdge','UserToUserRoleConnectionEdge','CategoryToContentNodeConnectionEdge','CategoryToParentCategoryConnectionEdge','CategoryToPostConnectionEdge','CategoryToTaxonomyConnectionEdge','RootQueryToCategoryConnectionEdge','RootQueryToCommentConnectionEdge','RootQueryToContentNodeConnectionEdge','RootQueryToContentTypeConnectionEdge','RootQueryToMediaItemConnectionEdge','MenuItemToMenuItemConnectionEdge','MenuItemToMenuItemLinkableConnectionEdge','MenuItemToMenuConnectionEdge','MenuToMenuItemConnectionEdge','RootQueryToMenuItemConnectionEdge','RootQueryToMenuConnectionEdge','RootQueryToPageConnectionEdge','RootQueryToPluginConnectionEdge','RootQueryToPostFormatConnectionEdge','RootQueryToPostConnectionEdge','RootQueryToEnqueuedScriptConnectionEdge','RootQueryToEnqueuedStylesheetConnectionEdge','RootQueryToRevisionsConnectionEdge','RootQueryToTagConnectionEdge','RootQueryToTaxonomyConnectionEdge','RootQueryToTermNodeConnectionEdge','RootQueryToThemeConnectionEdge','RootQueryToUserRoleConnectionEdge','RootQueryToUserConnectionEdge']
+    const Edge_possibleTypes: string[] = ['TermNodeToEnqueuedScriptConnectionEdge','TermNodeToEnqueuedStylesheetConnectionEdge','CategoryToAncestorsCategoryConnectionEdge','CategoryToCategoryConnectionEdge','ContentNodeToContentTypeConnectionEdge','TaxonomyToContentTypeConnectionEdge','TaxonomyToTermNodeConnectionEdge','ContentTypeToTaxonomyConnectionEdge','ContentTypeToContentNodeConnectionEdge','ContentNodeToEditLockConnectionEdge','CommentToCommenterConnectionEdge','CommentToContentNodeConnectionEdge','CommentToParentCommentConnectionEdge','CommentToCommentConnectionEdge','UserToCommentConnectionEdge','UserToEnqueuedScriptConnectionEdge','UserToEnqueuedStylesheetConnectionEdge','NodeWithAuthorToUserConnectionEdge','HierarchicalContentNodeToContentNodeAncestorsConnectionEdge','HierarchicalContentNodeToContentNodeChildrenConnectionEdge','ContentNodeToEnqueuedScriptConnectionEdge','ContentNodeToEnqueuedStylesheetConnectionEdge','ContentNodeToEditLastConnectionEdge','HierarchicalContentNodeToParentContentNodeConnectionEdge','MediaItemToCommentConnectionEdge','UserToMediaItemConnectionEdge','NodeWithFeaturedImageToMediaItemConnectionEdge','NodeWithRevisionsToContentNodeConnectionEdge','PageToCommentConnectionEdge','PageToPreviewConnectionEdge','PageToRevisionConnectionEdge','UserToPageConnectionEdge','PostToPostConnectionEdge','PostToCategoryConnectionEdge','PostToCommentConnectionEdge','PostToParentConnectionEdge','PostFormatToContentNodeConnectionEdge','PostFormatToPostConnectionEdge','PostFormatToTaxonomyConnectionEdge','PostToPostFormatConnectionEdge','PostToPreviewConnectionEdge','RelatedPostsConnectionEdge','PostToRevisionConnectionEdge','TagToContentNodeConnectionEdge','TagToPostConnectionEdge','TagToTaxonomyConnectionEdge','PostToTagConnectionEdge','PostToTermNodeConnectionEdge','UserToPostConnectionEdge','UserToRevisionsConnectionEdge','UserToUserRoleConnectionEdge','CategoryToContentNodeConnectionEdge','CategoryToParentCategoryConnectionEdge','CategoryToPostConnectionEdge','CategoryToTaxonomyConnectionEdge','RootQueryToCategoryConnectionEdge','RootQueryToCommentConnectionEdge','RootQueryToContentNodeConnectionEdge','RootQueryToContentTypeConnectionEdge','RootQueryToMediaItemConnectionEdge','MenuItemToMenuItemConnectionEdge','MenuItemToMenuItemLinkableConnectionEdge','MenuItemToMenuConnectionEdge','MenuToMenuItemConnectionEdge','RootQueryToMenuItemConnectionEdge','RootQueryToMenuConnectionEdge','RootQueryToPageConnectionEdge','RootQueryToPluginConnectionEdge','RootQueryToPostFormatConnectionEdge','RootQueryToPostConnectionEdge','RootQueryToEnqueuedScriptConnectionEdge','RootQueryToEnqueuedStylesheetConnectionEdge','RootQueryToRevisionsConnectionEdge','RootQueryToTagConnectionEdge','RootQueryToTaxonomyConnectionEdge','RootQueryToTermNodeConnectionEdge','RootQueryToThemeConnectionEdge','RootQueryToUserRoleConnectionEdge','RootQueryToUserConnectionEdge']
     export const isEdge = (obj?: { __typename?: any } | null): obj is Edge => {
       if (!obj?.__typename) throw new Error('__typename is missing in "isEdge"')
       return Edge_possibleTypes.includes(obj.__typename)
@@ -15827,7 +15933,7 @@ export type MutationGenqlSelection = RootMutationGenqlSelection
     
 
 
-    const PageInfo_possibleTypes: string[] = ['TermNodeToEnqueuedScriptConnectionPageInfo','TermNodeToEnqueuedStylesheetConnectionPageInfo','CategoryToAncestorsCategoryConnectionPageInfo','CategoryToCategoryConnectionPageInfo','TaxonomyToContentTypeConnectionPageInfo','TaxonomyToTermNodeConnectionPageInfo','ContentTypeToTaxonomyConnectionPageInfo','ContentTypeToContentNodeConnectionPageInfo','CommentToCommentConnectionPageInfo','UserToCommentConnectionPageInfo','UserToEnqueuedScriptConnectionPageInfo','UserToEnqueuedStylesheetConnectionPageInfo','HierarchicalContentNodeToContentNodeAncestorsConnectionPageInfo','HierarchicalContentNodeToContentNodeChildrenConnectionPageInfo','ContentNodeToEnqueuedScriptConnectionPageInfo','ContentNodeToEnqueuedStylesheetConnectionPageInfo','MediaItemToCommentConnectionPageInfo','UserToMediaItemConnectionPageInfo','PageToCommentConnectionPageInfo','PageToRevisionConnectionPageInfo','UserToPageConnectionPageInfo','PostToPostConnectionPageInfo','PostToCategoryConnectionPageInfo','PostToCommentConnectionPageInfo','PostFormatToContentNodeConnectionPageInfo','PostFormatToPostConnectionPageInfo','PostToPostFormatConnectionPageInfo','PostToRevisionConnectionPageInfo','TagToContentNodeConnectionPageInfo','TagToPostConnectionPageInfo','PostToTagConnectionPageInfo','PostToTermNodeConnectionPageInfo','UserToPostConnectionPageInfo','UserToRevisionsConnectionPageInfo','UserToUserRoleConnectionPageInfo','CategoryToContentNodeConnectionPageInfo','CategoryToPostConnectionPageInfo','RootQueryToCategoryConnectionPageInfo','RootQueryToCommentConnectionPageInfo','RootQueryToContentNodeConnectionPageInfo','RootQueryToContentTypeConnectionPageInfo','RootQueryToMediaItemConnectionPageInfo','MenuItemToMenuItemConnectionPageInfo','MenuToMenuItemConnectionPageInfo','RootQueryToMenuItemConnectionPageInfo','RootQueryToMenuConnectionPageInfo','RootQueryToPageConnectionPageInfo','RootQueryToPluginConnectionPageInfo','RootQueryToPostFormatConnectionPageInfo','RootQueryToPostConnectionPageInfo','RootQueryToEnqueuedScriptConnectionPageInfo','RootQueryToEnqueuedStylesheetConnectionPageInfo','RootQueryToRevisionsConnectionPageInfo','RootQueryToTagConnectionPageInfo','RootQueryToTaxonomyConnectionPageInfo','RootQueryToTermNodeConnectionPageInfo','RootQueryToThemeConnectionPageInfo','RootQueryToUserRoleConnectionPageInfo','RootQueryToUserConnectionPageInfo']
+    const PageInfo_possibleTypes: string[] = ['TermNodeToEnqueuedScriptConnectionPageInfo','TermNodeToEnqueuedStylesheetConnectionPageInfo','CategoryToAncestorsCategoryConnectionPageInfo','CategoryToCategoryConnectionPageInfo','TaxonomyToContentTypeConnectionPageInfo','TaxonomyToTermNodeConnectionPageInfo','ContentTypeToTaxonomyConnectionPageInfo','ContentTypeToContentNodeConnectionPageInfo','CommentToCommentConnectionPageInfo','UserToCommentConnectionPageInfo','UserToEnqueuedScriptConnectionPageInfo','UserToEnqueuedStylesheetConnectionPageInfo','HierarchicalContentNodeToContentNodeAncestorsConnectionPageInfo','HierarchicalContentNodeToContentNodeChildrenConnectionPageInfo','ContentNodeToEnqueuedScriptConnectionPageInfo','ContentNodeToEnqueuedStylesheetConnectionPageInfo','MediaItemToCommentConnectionPageInfo','UserToMediaItemConnectionPageInfo','PageToCommentConnectionPageInfo','PageToRevisionConnectionPageInfo','UserToPageConnectionPageInfo','PostToPostConnectionPageInfo','PostToCategoryConnectionPageInfo','PostToCommentConnectionPageInfo','PostFormatToContentNodeConnectionPageInfo','PostFormatToPostConnectionPageInfo','PostToPostFormatConnectionPageInfo','RelatedPostsConnectionPageInfo','PostToRevisionConnectionPageInfo','TagToContentNodeConnectionPageInfo','TagToPostConnectionPageInfo','PostToTagConnectionPageInfo','PostToTermNodeConnectionPageInfo','UserToPostConnectionPageInfo','UserToRevisionsConnectionPageInfo','UserToUserRoleConnectionPageInfo','CategoryToContentNodeConnectionPageInfo','CategoryToPostConnectionPageInfo','RootQueryToCategoryConnectionPageInfo','RootQueryToCommentConnectionPageInfo','RootQueryToContentNodeConnectionPageInfo','RootQueryToContentTypeConnectionPageInfo','RootQueryToMediaItemConnectionPageInfo','MenuItemToMenuItemConnectionPageInfo','MenuToMenuItemConnectionPageInfo','RootQueryToMenuItemConnectionPageInfo','RootQueryToMenuConnectionPageInfo','RootQueryToPageConnectionPageInfo','RootQueryToPluginConnectionPageInfo','RootQueryToPostFormatConnectionPageInfo','RootQueryToPostConnectionPageInfo','RootQueryToEnqueuedScriptConnectionPageInfo','RootQueryToEnqueuedStylesheetConnectionPageInfo','RootQueryToRevisionsConnectionPageInfo','RootQueryToTagConnectionPageInfo','RootQueryToTaxonomyConnectionPageInfo','RootQueryToTermNodeConnectionPageInfo','RootQueryToThemeConnectionPageInfo','RootQueryToUserRoleConnectionPageInfo','RootQueryToUserConnectionPageInfo']
     export const isPageInfo = (obj?: { __typename?: any } | null): obj is PageInfo => {
       if (!obj?.__typename) throw new Error('__typename is missing in "isPageInfo"')
       return PageInfo_possibleTypes.includes(obj.__typename)
@@ -15915,7 +16021,7 @@ export type MutationGenqlSelection = RootMutationGenqlSelection
     
 
 
-    const WPPageInfo_possibleTypes: string[] = ['TermNodeToEnqueuedScriptConnectionPageInfo','TermNodeToEnqueuedStylesheetConnectionPageInfo','CategoryToAncestorsCategoryConnectionPageInfo','CategoryToCategoryConnectionPageInfo','TaxonomyToContentTypeConnectionPageInfo','TaxonomyToTermNodeConnectionPageInfo','ContentTypeToTaxonomyConnectionPageInfo','ContentTypeToContentNodeConnectionPageInfo','CommentToCommentConnectionPageInfo','UserToCommentConnectionPageInfo','UserToEnqueuedScriptConnectionPageInfo','UserToEnqueuedStylesheetConnectionPageInfo','HierarchicalContentNodeToContentNodeAncestorsConnectionPageInfo','HierarchicalContentNodeToContentNodeChildrenConnectionPageInfo','ContentNodeToEnqueuedScriptConnectionPageInfo','ContentNodeToEnqueuedStylesheetConnectionPageInfo','MediaItemToCommentConnectionPageInfo','UserToMediaItemConnectionPageInfo','PageToCommentConnectionPageInfo','PageToRevisionConnectionPageInfo','UserToPageConnectionPageInfo','PostToPostConnectionPageInfo','PostToCategoryConnectionPageInfo','PostToCommentConnectionPageInfo','PostFormatToContentNodeConnectionPageInfo','PostFormatToPostConnectionPageInfo','PostToPostFormatConnectionPageInfo','PostToRevisionConnectionPageInfo','TagToContentNodeConnectionPageInfo','TagToPostConnectionPageInfo','PostToTagConnectionPageInfo','PostToTermNodeConnectionPageInfo','UserToPostConnectionPageInfo','UserToRevisionsConnectionPageInfo','UserToUserRoleConnectionPageInfo','CategoryToContentNodeConnectionPageInfo','CategoryToPostConnectionPageInfo','RootQueryToCategoryConnectionPageInfo','RootQueryToCommentConnectionPageInfo','RootQueryToContentNodeConnectionPageInfo','RootQueryToContentTypeConnectionPageInfo','RootQueryToMediaItemConnectionPageInfo','MenuItemToMenuItemConnectionPageInfo','MenuToMenuItemConnectionPageInfo','RootQueryToMenuItemConnectionPageInfo','RootQueryToMenuConnectionPageInfo','RootQueryToPageConnectionPageInfo','RootQueryToPluginConnectionPageInfo','RootQueryToPostFormatConnectionPageInfo','RootQueryToPostConnectionPageInfo','RootQueryToEnqueuedScriptConnectionPageInfo','RootQueryToEnqueuedStylesheetConnectionPageInfo','RootQueryToRevisionsConnectionPageInfo','RootQueryToTagConnectionPageInfo','RootQueryToTaxonomyConnectionPageInfo','RootQueryToTermNodeConnectionPageInfo','RootQueryToThemeConnectionPageInfo','RootQueryToUserRoleConnectionPageInfo','RootQueryToUserConnectionPageInfo']
+    const WPPageInfo_possibleTypes: string[] = ['TermNodeToEnqueuedScriptConnectionPageInfo','TermNodeToEnqueuedStylesheetConnectionPageInfo','CategoryToAncestorsCategoryConnectionPageInfo','CategoryToCategoryConnectionPageInfo','TaxonomyToContentTypeConnectionPageInfo','TaxonomyToTermNodeConnectionPageInfo','ContentTypeToTaxonomyConnectionPageInfo','ContentTypeToContentNodeConnectionPageInfo','CommentToCommentConnectionPageInfo','UserToCommentConnectionPageInfo','UserToEnqueuedScriptConnectionPageInfo','UserToEnqueuedStylesheetConnectionPageInfo','HierarchicalContentNodeToContentNodeAncestorsConnectionPageInfo','HierarchicalContentNodeToContentNodeChildrenConnectionPageInfo','ContentNodeToEnqueuedScriptConnectionPageInfo','ContentNodeToEnqueuedStylesheetConnectionPageInfo','MediaItemToCommentConnectionPageInfo','UserToMediaItemConnectionPageInfo','PageToCommentConnectionPageInfo','PageToRevisionConnectionPageInfo','UserToPageConnectionPageInfo','PostToPostConnectionPageInfo','PostToCategoryConnectionPageInfo','PostToCommentConnectionPageInfo','PostFormatToContentNodeConnectionPageInfo','PostFormatToPostConnectionPageInfo','PostToPostFormatConnectionPageInfo','RelatedPostsConnectionPageInfo','PostToRevisionConnectionPageInfo','TagToContentNodeConnectionPageInfo','TagToPostConnectionPageInfo','PostToTagConnectionPageInfo','PostToTermNodeConnectionPageInfo','UserToPostConnectionPageInfo','UserToRevisionsConnectionPageInfo','UserToUserRoleConnectionPageInfo','CategoryToContentNodeConnectionPageInfo','CategoryToPostConnectionPageInfo','RootQueryToCategoryConnectionPageInfo','RootQueryToCommentConnectionPageInfo','RootQueryToContentNodeConnectionPageInfo','RootQueryToContentTypeConnectionPageInfo','RootQueryToMediaItemConnectionPageInfo','MenuItemToMenuItemConnectionPageInfo','MenuToMenuItemConnectionPageInfo','RootQueryToMenuItemConnectionPageInfo','RootQueryToMenuConnectionPageInfo','RootQueryToPageConnectionPageInfo','RootQueryToPluginConnectionPageInfo','RootQueryToPostFormatConnectionPageInfo','RootQueryToPostConnectionPageInfo','RootQueryToEnqueuedScriptConnectionPageInfo','RootQueryToEnqueuedStylesheetConnectionPageInfo','RootQueryToRevisionsConnectionPageInfo','RootQueryToTagConnectionPageInfo','RootQueryToTaxonomyConnectionPageInfo','RootQueryToTermNodeConnectionPageInfo','RootQueryToThemeConnectionPageInfo','RootQueryToUserRoleConnectionPageInfo','RootQueryToUserConnectionPageInfo']
     export const isWPPageInfo = (obj?: { __typename?: any } | null): obj is WPPageInfo => {
       if (!obj?.__typename) throw new Error('__typename is missing in "isWPPageInfo"')
       return WPPageInfo_possibleTypes.includes(obj.__typename)
@@ -17019,7 +17125,7 @@ export type MutationGenqlSelection = RootMutationGenqlSelection
     
 
 
-    const PostConnection_possibleTypes: string[] = ['UserToPostConnection','PostToPostConnection','PostFormatToPostConnection','PostToRevisionConnection','TagToPostConnection','CategoryToPostConnection','RootQueryToPostConnection']
+    const PostConnection_possibleTypes: string[] = ['UserToPostConnection','PostToPostConnection','PostFormatToPostConnection','RelatedPostsConnection','PostToRevisionConnection','TagToPostConnection','CategoryToPostConnection','RootQueryToPostConnection']
     export const isPostConnection = (obj?: { __typename?: any } | null): obj is PostConnection => {
       if (!obj?.__typename) throw new Error('__typename is missing in "isPostConnection"')
       return PostConnection_possibleTypes.includes(obj.__typename)
@@ -17027,7 +17133,7 @@ export type MutationGenqlSelection = RootMutationGenqlSelection
     
 
 
-    const PostConnectionEdge_possibleTypes: string[] = ['PostToPostConnectionEdge','PostToParentConnectionEdge','PostFormatToPostConnectionEdge','PostToPreviewConnectionEdge','PostToRevisionConnectionEdge','TagToPostConnectionEdge','UserToPostConnectionEdge','CategoryToPostConnectionEdge','RootQueryToPostConnectionEdge']
+    const PostConnectionEdge_possibleTypes: string[] = ['PostToPostConnectionEdge','PostToParentConnectionEdge','PostFormatToPostConnectionEdge','PostToPreviewConnectionEdge','RelatedPostsConnectionEdge','PostToRevisionConnectionEdge','TagToPostConnectionEdge','UserToPostConnectionEdge','CategoryToPostConnectionEdge','RootQueryToPostConnectionEdge']
     export const isPostConnectionEdge = (obj?: { __typename?: any } | null): obj is PostConnectionEdge => {
       if (!obj?.__typename) throw new Error('__typename is missing in "isPostConnectionEdge"')
       return PostConnectionEdge_possibleTypes.includes(obj.__typename)
@@ -17083,7 +17189,7 @@ export type MutationGenqlSelection = RootMutationGenqlSelection
     
 
 
-    const PostConnectionPageInfo_possibleTypes: string[] = ['PostToPostConnectionPageInfo','PostFormatToPostConnectionPageInfo','PostToRevisionConnectionPageInfo','TagToPostConnectionPageInfo','UserToPostConnectionPageInfo','CategoryToPostConnectionPageInfo','RootQueryToPostConnectionPageInfo']
+    const PostConnectionPageInfo_possibleTypes: string[] = ['PostToPostConnectionPageInfo','PostFormatToPostConnectionPageInfo','RelatedPostsConnectionPageInfo','PostToRevisionConnectionPageInfo','TagToPostConnectionPageInfo','UserToPostConnectionPageInfo','CategoryToPostConnectionPageInfo','RootQueryToPostConnectionPageInfo']
     export const isPostConnectionPageInfo = (obj?: { __typename?: any } | null): obj is PostConnectionPageInfo => {
       if (!obj?.__typename) throw new Error('__typename is missing in "isPostConnectionPageInfo"')
       return PostConnectionPageInfo_possibleTypes.includes(obj.__typename)
@@ -17279,6 +17385,30 @@ export type MutationGenqlSelection = RootMutationGenqlSelection
     export const isPostToPreviewConnectionEdge = (obj?: { __typename?: any } | null): obj is PostToPreviewConnectionEdge => {
       if (!obj?.__typename) throw new Error('__typename is missing in "isPostToPreviewConnectionEdge"')
       return PostToPreviewConnectionEdge_possibleTypes.includes(obj.__typename)
+    }
+    
+
+
+    const RelatedPostsConnection_possibleTypes: string[] = ['RelatedPostsConnection']
+    export const isRelatedPostsConnection = (obj?: { __typename?: any } | null): obj is RelatedPostsConnection => {
+      if (!obj?.__typename) throw new Error('__typename is missing in "isRelatedPostsConnection"')
+      return RelatedPostsConnection_possibleTypes.includes(obj.__typename)
+    }
+    
+
+
+    const RelatedPostsConnectionEdge_possibleTypes: string[] = ['RelatedPostsConnectionEdge']
+    export const isRelatedPostsConnectionEdge = (obj?: { __typename?: any } | null): obj is RelatedPostsConnectionEdge => {
+      if (!obj?.__typename) throw new Error('__typename is missing in "isRelatedPostsConnectionEdge"')
+      return RelatedPostsConnectionEdge_possibleTypes.includes(obj.__typename)
+    }
+    
+
+
+    const RelatedPostsConnectionPageInfo_possibleTypes: string[] = ['RelatedPostsConnectionPageInfo']
+    export const isRelatedPostsConnectionPageInfo = (obj?: { __typename?: any } | null): obj is RelatedPostsConnectionPageInfo => {
+      if (!obj?.__typename) throw new Error('__typename is missing in "isRelatedPostsConnectionPageInfo"')
+      return RelatedPostsConnectionPageInfo_possibleTypes.includes(obj.__typename)
     }
     
 
@@ -19038,6 +19168,7 @@ export const enumMediaItemSizeEnum = {
    MEDIUM: 'MEDIUM' as const,
    MEDIUM_LARGE: 'MEDIUM_LARGE' as const,
    THUMBNAIL: 'THUMBNAIL' as const,
+   YARPP_THUMBNAIL: 'YARPP_THUMBNAIL' as const,
    _1536X1536: '_1536X1536' as const,
    _2048X2048: '_2048X2048' as const
 }

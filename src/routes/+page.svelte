@@ -2,8 +2,12 @@
 import type { PageProps } from "./$types";
 import { css } from "styled-system/css";
 
-import { HomeMain, Posts, SectionWithHeader } from "@/components/partials";
-import PostsWithHighlight from "@/components/partials/posts-with-highlight.svelte";
+import {
+	HomeMain,
+	Posts,
+	SectionWithHeader,
+	PostsWithHighlight,
+} from "@/components/partials";
 
 let { data }: PageProps = $props();
 </script>

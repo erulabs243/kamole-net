@@ -5996,6 +5996,9 @@ enum MediaItemSizeEnum {
   """Small image preview suitable for thumbnails and listings. (150x150)"""
   THUMBNAIL
 
+  """Custom Image Size. (120x120)"""
+  YARPP_THUMBNAIL
+
   """Custom Image Size. (1536x1536)"""
   _1536X1536
 
@@ -7414,6 +7417,28 @@ type Post implements Node & ContentNode & UniformResourceIdentifiable & Database
   """Whether the object is a node in the preview state"""
   previewRevisionId: ID
 
+  """Connection between the Post type and the Post type"""
+  relatedPosts(
+    """The number of items to return after the referenced "after" cursor"""
+    first: Int
+
+    """The number of items to return before the referenced "before" cursor"""
+    last: Int
+
+    """
+    Cursor used along with the "first" argument to reference where in the dataset to get data
+    """
+    after: String
+
+    """
+    Cursor used along with the "last" argument to reference where in the dataset to get data
+    """
+    before: String
+
+    """Arguments for filtering the connection"""
+    where: RelatedPostsConnectionWhereArgs
+  ): RelatedPostsConnection
+
   """
   If the current node is a revision, this field exposes the node this is a revision of. Returns null if the node is not a revision of another node.
   """
@@ -8569,6 +8594,55 @@ type PostToPreviewConnectionEdge implements OneToOneConnection & Edge & PostConn
 
   """The node of the connection, without the edges"""
   node: Post!
+}
+
+"""Arguments for filtering the RelatedPostsConnection connection"""
+input RelatedPostsConnectionWhereArgs {
+  """
+  Override's YARPP setting's "Maximum number of related posts." The maximum number is 20.
+  """
+  limit: Int
+}
+
+"""Connection between the Post type and the Post type"""
+type RelatedPostsConnection implements PostConnection & Connection {
+  """Edges for the RelatedPostsConnection connection"""
+  edges: [RelatedPostsConnectionEdge!]!
+
+  """The nodes of the connection, without the edges"""
+  nodes: [Post!]!
+
+  """Information about pagination in a connection."""
+  pageInfo: RelatedPostsConnectionPageInfo!
+}
+
+"""An edge in a connection"""
+type RelatedPostsConnectionEdge implements PostConnectionEdge & Edge {
+  """A cursor for use in pagination"""
+  cursor: String
+
+  """The item at the end of the edge"""
+  node: Post!
+}
+
+"""
+Pagination metadata specific to &quot;RelatedPostsConnection&quot; collections. Provides cursors and flags for navigating through sets of RelatedPostsConnection Nodes.
+"""
+type RelatedPostsConnectionPageInfo implements PostConnectionPageInfo & WPPageInfo & PageInfo {
+  """When paginating forwards, the cursor to continue."""
+  endCursor: String
+
+  """When paginating forwards, are there more items?"""
+  hasNextPage: Boolean!
+
+  """When paginating backwards, are there more items?"""
+  hasPreviousPage: Boolean!
+
+  """Raw schema for page"""
+  seo: SEOPostTypePageInfo
+
+  """When paginating backwards, the cursor to continue."""
+  startCursor: String
 }
 
 """Arguments for filtering the PostToRevisionConnection connection"""

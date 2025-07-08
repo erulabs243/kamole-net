@@ -182,6 +182,32 @@ export const getPost = async (slug: string) => {
 					},
 				},
 				seo,
+				relatedPosts: {
+					__args: {
+						where: {
+							limit: 5,
+						},
+					},
+					edges: {
+						node: {
+							title: true,
+							slug: true,
+							date: true,
+							featuredImage: {
+								node: {
+									sourceUrl: true,
+									altText: true,
+								},
+							},
+							categories: {
+								nodes: {
+									name: true,
+									slug: true,
+								},
+							},
+						},
+					},
+				},
 			},
 		})
 	).post;

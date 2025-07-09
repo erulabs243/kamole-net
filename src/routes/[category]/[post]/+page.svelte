@@ -13,7 +13,6 @@ import { badgeRecipe } from "@/components/ui/badge";
 import { avatarSlotRecipe } from "@/components/ui/avatar";
 
 let { data }: PageProps = $props();
-console.dir(data.post.author);
 </script>
 
 <div class={css({ spaceY: { base: "8", sm: "16"} })}>
@@ -68,7 +67,7 @@ console.dir(data.post.author);
 
 				<!-- Author -->
 					<a
-						href={`/auteurs/${data.post.author.node.username}`}
+						href={`/auteurs/${data.post.author.node.name}`}
 						class={css({
 							display: "inline-flex",
 							gap: "2",
@@ -91,8 +90,8 @@ console.dir(data.post.author);
 									color: "neutral.600"
 								})}>Auteur</span><br />
 							<span>
-								{data.post.author?.node.name ||
-									`${data.post.author?.node.firstName} ${data.post.author?.node.lastName}`}
+								{
+									`${data.post.author?.node.firstName} ${data.post.author?.node.lastName}` || data.post.author?.node.name }
 							</span>
 						</p>
 					</a>

@@ -176,7 +176,6 @@ export const getPost = async (slug: string) => {
 				author: {
 					node: {
 						name: true,
-						username: true,
 						firstName: true,
 						lastName: true,
 						avatar: {

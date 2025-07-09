@@ -1,7 +1,7 @@
-import { error } from "@sveltejs/kit";
-import type { PageServerLoad } from "./$types";
+import { error } from '@sveltejs/kit';
+import type { PageServerLoad } from './$types';
 
-import { authorClient } from "@/data/api";
+import { authorClient } from '@/data/api';
 
 export const load = (async ({ params }) => {
 	const response = await authorClient.getAuthor(params.author);
@@ -9,7 +9,7 @@ export const load = (async ({ params }) => {
 
 	if (!response?.nodes.length) {
 		throw error(404, {
-			message: "Auteur introuvable",
+			message: 'Auteur introuvable'
 		});
 	}
 
@@ -17,6 +17,6 @@ export const load = (async ({ params }) => {
 
 	return {
 		posts: authorClient.getPostsByAuthor(author.name!),
-		author,
+		author
 	};
 }) satisfies PageServerLoad;

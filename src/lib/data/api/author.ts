@@ -1,20 +1,20 @@
-import { seo } from "./seo";
-import { client } from "./client";
+import { seo } from './seo';
+import { client } from './client';
 
 export const getAuthor = async (author: string) => {
 	return (
 		await client.query({
 			users: {
 				__args: {
-					where: { nicename: author },
+					where: { nicename: author }
 				},
 				nodes: {
 					name: true,
 					firstName: true,
 					lastName: true,
-					id: true,
-				},
-			},
+					id: true
+				}
+			}
 		})
 	).users;
 };
@@ -23,7 +23,7 @@ export const getPostsByAuthor = async (
 	author: string,
 	limit: number = 12,
 	after: string | null = null,
-	before: string | null = null,
+	before: string | null = null
 ) => {
 	return (
 		await client.query({
@@ -32,13 +32,13 @@ export const getPostsByAuthor = async (
 					first: limit,
 					after,
 					before,
-					where: { authorName: author },
+					where: { authorName: author }
 				},
 				pageInfo: {
 					hasNextPage: true,
 					hasPreviousPage: true,
 					endCursor: true,
-					startCursor: true,
+					startCursor: true
 				},
 				edges: {
 					node: {
@@ -49,25 +49,25 @@ export const getPostsByAuthor = async (
 						featuredImage: {
 							node: {
 								sourceUrl: true,
-								altText: true,
-							},
+								altText: true
+							}
 						},
 						tags: {
 							nodes: {
 								name: true,
-								slug: true,
-							},
+								slug: true
+							}
 						},
 						categories: {
 							nodes: {
 								name: true,
-								slug: true,
-							},
+								slug: true
+							}
 						},
-						seo,
-					},
-				},
-			},
+						seo
+					}
+				}
+			}
 		})
 	).posts;
 };

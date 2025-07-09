@@ -1,12 +1,12 @@
-import { client } from "./client";
-import { seo } from "./seo";
+import { client } from './client';
+import { seo } from './seo';
 
 export const getPosts = async (limit: number = 10) => {
 	return (
 		await client.query({
 			posts: {
 				__args: {
-					first: limit,
+					first: limit
 				},
 				edges: {
 					node: {
@@ -17,25 +17,25 @@ export const getPosts = async (limit: number = 10) => {
 						featuredImage: {
 							node: {
 								sourceUrl: true,
-								altText: true,
-							},
+								altText: true
+							}
 						},
 						tags: {
 							nodes: {
 								name: true,
-								slug: true,
-							},
+								slug: true
+							}
 						},
 						categories: {
 							nodes: {
 								name: true,
-								slug: true,
-							},
+								slug: true
+							}
 						},
-						seo,
-					},
-				},
-			},
+						seo
+					}
+				}
+			}
 		})
 	).posts;
 };
@@ -46,7 +46,7 @@ export const getPinnedPosts = async (limit: number = 8) => {
 			posts: {
 				__args: {
 					first: limit,
-					where: {},
+					where: {}
 				},
 				edges: {
 					node: {
@@ -57,25 +57,25 @@ export const getPinnedPosts = async (limit: number = 8) => {
 						featuredImage: {
 							node: {
 								sourceUrl: true,
-								altText: true,
-							},
+								altText: true
+							}
 						},
 						tags: {
 							nodes: {
 								name: true,
-								slug: true,
-							},
+								slug: true
+							}
 						},
 						categories: {
 							nodes: {
 								name: true,
-								slug: true,
-							},
+								slug: true
+							}
 						},
-						seo,
-					},
-				},
-			},
+						seo
+					}
+				}
+			}
 		})
 	).posts;
 };
@@ -87,7 +87,7 @@ export const getPostsByCategory = async (
 	category: string,
 	limit: number = 12,
 	after: string | null = null,
-	before: string | null = null,
+	before: string | null = null
 ) => {
 	return (
 		await client.query({
@@ -96,13 +96,13 @@ export const getPostsByCategory = async (
 					first: limit,
 					after,
 					before,
-					where: { categoryIn: [category] },
+					where: { categoryIn: [category] }
 				},
 				pageInfo: {
 					hasNextPage: true,
 					hasPreviousPage: true,
 					endCursor: true,
-					startCursor: true,
+					startCursor: true
 				},
 				edges: {
 					node: {
@@ -113,25 +113,25 @@ export const getPostsByCategory = async (
 						featuredImage: {
 							node: {
 								sourceUrl: true,
-								altText: true,
-							},
+								altText: true
+							}
 						},
 						tags: {
 							nodes: {
 								name: true,
-								slug: true,
-							},
+								slug: true
+							}
 						},
 						categories: {
 							nodes: {
 								name: true,
-								slug: true,
-							},
+								slug: true
+							}
 						},
-						seo,
-					},
-				},
-			},
+						seo
+					}
+				}
+			}
 		})
 	).posts;
 };
@@ -145,7 +145,7 @@ export const getPost = async (slug: string) => {
 			post: {
 				__args: {
 					id: slug,
-					idType: "SLUG",
+					idType: 'SLUG'
 				},
 				title: true,
 				excerpt: true,
@@ -156,22 +156,22 @@ export const getPost = async (slug: string) => {
 				featuredImage: {
 					node: {
 						sourceUrl: true,
-						altText: true,
-					},
+						altText: true
+					}
 				},
 				categories: {
 					nodes: {
 						name: true,
 						slug: true,
-						id: true,
-					},
+						id: true
+					}
 				},
 				tags: {
 					nodes: {
 						name: true,
 						slug: true,
-						id: true,
-					},
+						id: true
+					}
 				},
 				author: {
 					node: {
@@ -179,16 +179,16 @@ export const getPost = async (slug: string) => {
 						firstName: true,
 						lastName: true,
 						avatar: {
-							url: true,
-						},
-					},
+							url: true
+						}
+					}
 				},
 				seo,
 				relatedPosts: {
 					__args: {
 						where: {
-							limit: 5,
-						},
+							limit: 5
+						}
 					},
 					edges: {
 						node: {
@@ -198,19 +198,19 @@ export const getPost = async (slug: string) => {
 							featuredImage: {
 								node: {
 									sourceUrl: true,
-									altText: true,
-								},
+									altText: true
+								}
 							},
 							categories: {
 								nodes: {
 									name: true,
-									slug: true,
-								},
-							},
-						},
-					},
-				},
-			},
+									slug: true
+								}
+							}
+						}
+					}
+				}
+			}
 		})
 	).post;
 };

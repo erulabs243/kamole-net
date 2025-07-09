@@ -85,14 +85,16 @@ export const buttonRecipe = cva({
 			},
 
 			subtle: {
-				bg: 'bg.subtle',
-				color: 'fg.muted',
+				bg: 'transparent',
+				color: 'fg',
 				borderColor: 'transparent',
 				_hover: {
-					bg: 'bg.emphasized'
+					bg: 'bg',
+					color: 'fg'
 				},
 				_expanded: {
-					bg: 'bg.emphasized'
+					bg: 'bg',
+					color: 'fg'
 				}
 			},
 			outline: {

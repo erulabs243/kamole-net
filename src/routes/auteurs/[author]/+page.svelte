@@ -1,13 +1,13 @@
 <script lang="ts">
-import { page } from "$app/state";
-import type { PageProps } from "./$types";
+	import { page } from '$app/state';
+	import type { PageProps } from './$types';
 
-import { css } from "styled-system/css";
+	import { css } from 'styled-system/css';
 
-import { Posts, PageHeading } from "@/components/partials";
-import { Pagination } from "@/components/widgets";
+	import { Posts, PageHeading } from '@/components/partials';
+	import { Pagination } from '@/components/widgets';
 
-let { data }: PageProps = $props();
+	let { data }: PageProps = $props();
 </script>
 
 <PageHeading title={data.author.name} />

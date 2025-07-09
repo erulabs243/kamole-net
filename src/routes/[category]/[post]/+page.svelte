@@ -1,21 +1,21 @@
 <script lang="ts">
-import type { PageProps } from "./$types";
+	import type { PageProps } from './$types';
 
-import { Avatar } from "@ark-ui/svelte/avatar";
+	import { Avatar } from '@ark-ui/svelte/avatar';
 
-import { stack } from "styled-system/patterns";
-import { prose } from "styled-system/recipes";
-import { cx, css } from "styled-system/css";
+	import { stack } from 'styled-system/patterns';
+	import { prose } from 'styled-system/recipes';
+	import { cx, css } from 'styled-system/css';
 
-import { DateWidget, Image } from "@/components/widgets";
-import { SectionWithHeader, PostsWithHighlight } from "@/components/partials";
-import { badgeRecipe } from "@/components/ui/badge";
-import { avatarSlotRecipe } from "@/components/ui/avatar";
+	import { DateWidget, Image } from '@/components/widgets';
+	import { SectionWithHeader, PostsWithHighlight } from '@/components/partials';
+	import { badgeRecipe } from '@/components/ui/badge';
+	import { avatarSlotRecipe } from '@/components/ui/avatar';
 
-let { data }: PageProps = $props();
+	let { data }: PageProps = $props();
 </script>
 
-<div class={css({ spaceY: { base: "8", sm: "16"} })}>
+<div class={css({ spaceY: { base: '8', sm: '16' } })}>
 	<!-- Header -->
 	<header
 		class={stack({
@@ -26,7 +26,7 @@ let { data }: PageProps = $props();
 		<div
 			class={stack({
 				spaceY: '2',
-				flexDir: "column",
+				flexDir: 'column',
 				w: { base: 'full', sm: '1/2' },
 				flexGrow: 'grow'
 			})}
@@ -66,41 +66,43 @@ let { data }: PageProps = $props();
 				</p>
 
 				<!-- Author -->
-					<a
-						href={`/auteurs/${data.post.author.node.name}`}
-						class={css({
-							display: "inline-flex",
-							gap: "2",
-							alignItems: "center"
-						})}
-					>
-						<Avatar.Root class={avatarSlotRecipe({ size: "lg"}).root}>
-							<Avatar.Fallback class={avatarSlotRecipe().fallback}>
-								{data.post.author?.node.name?.substring(0, 2).toUpperCase()}
-							</Avatar.Fallback>
-							<Avatar.Image
-								class={avatarSlotRecipe().image}
-								src={data.post.author?.node.avatar.url}
-								alt={data.post.author?.node.name}
-							/>
-						</Avatar.Root>
-						<p>
-							<span class={css({
-									fontSize: "sm",
-									color: "neutral.600"
-								})}>Auteur</span><br />
-							<span>
-								{
-									`${data.post.author?.node.firstName} ${data.post.author?.node.lastName}` || data.post.author?.node.name }
-							</span>
-						</p>
-					</a>
+				<a
+					href={`/auteurs/${data.post.author.node.name}`}
+					class={css({
+						display: 'inline-flex',
+						gap: '2',
+						alignItems: 'center'
+					})}
+				>
+					<Avatar.Root class={avatarSlotRecipe({ size: 'lg' }).root}>
+						<Avatar.Fallback class={avatarSlotRecipe().fallback}>
+							{data.post.author?.node.name?.substring(0, 2).toUpperCase()}
+						</Avatar.Fallback>
+						<Avatar.Image
+							class={avatarSlotRecipe().image}
+							src={data.post.author?.node.avatar.url}
+							alt={data.post.author?.node.name}
+						/>
+					</Avatar.Root>
+					<p>
+						<span
+							class={css({
+								fontSize: 'sm',
+								color: 'neutral.600'
+							})}>Auteur</span
+						><br />
+						<span>
+							{`${data.post.author?.node.firstName} ${data.post.author?.node.lastName}` ||
+								data.post.author?.node.name}
+						</span>
+					</p>
+				</a>
 			</div>
 		</div>
 
 		<div
 			class={css({
-				w: { base: "full", sm: '1/2' },
+				w: { base: 'full', sm: '1/2' },
 				flexGrow: 'grow'
 			})}
 		>

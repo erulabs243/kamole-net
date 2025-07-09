@@ -44,7 +44,9 @@
 	},
 	"dependencies": {
 		"@ark-ui/svelte": "^5.1.1",
+		"@fontsource-variable/ibm-plex-sans": "^5.2.6",
 		"@fontsource-variable/inclusive-sans": "^5.2.6",
+		"@fontsource/ibm-plex-serif": "^5.2.6",
 		"@unpic/svelte": "^1.0.0",
 		"lucide-svelte": "^0.525.0"
 	}

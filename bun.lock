@@ -5,7 +5,9 @@
       "name": "kamole-net",
       "dependencies": {
         "@ark-ui/svelte": "^5.1.1",
+        "@fontsource-variable/ibm-plex-sans": "^5.2.6",
         "@fontsource-variable/inclusive-sans": "^5.2.6",
+        "@fontsource/ibm-plex-serif": "^5.2.6",
         "@unpic/svelte": "^1.0.0",
         "lucide-svelte": "^0.525.0",
       },
@@ -145,7 +147,11 @@
 
     "@floating-ui/utils": ["@floating-ui/utils@0.2.10", "", {}, "sha512-aGTxbpbg8/b5JfU1HXSrbH3wXZuLPJcNEcZQFMxLs3oSzgtVu6nFPkbbGGUvBcUjKV2YyB9Wxxabo+HEH9tcRQ=="],
 
+    "@fontsource-variable/ibm-plex-sans": ["@fontsource-variable/ibm-plex-sans@5.2.6", "", {}, "sha512-hnuya7tsdaEiub463GFrhKDnmViTFKkJb9S+H+Fk6sMnr5dL/5DlAxeCZyXMK8WfjHktDiaEOIWPRZBQVKV0dw=="],
+
     "@fontsource-variable/inclusive-sans": ["@fontsource-variable/inclusive-sans@5.2.6", "", {}, "sha512-/c83n6M6r8uFMz8opQegRH3C93mz8WfAHvTQRbGYxE4ogdoVusoGVExv8lYaK6/NtzTWYRcw9k9u2LUaAt6QOA=="],
+
+    "@fontsource/ibm-plex-serif": ["@fontsource/ibm-plex-serif@5.2.6", "", {}, "sha512-/FyBI9qciE6QQjF0Q2Uul68tz9vPsGZgh13ftKcyHsGkP8TvcW+2H77KurT7rN3usWHEbGgjoUkSzUEG7z+fRQ=="],
 
     "@humanfs/core": ["@humanfs/core@0.19.1", "", {}, "sha512-5DyQ4+1JEUzejeK1JGICcideyfUbGixgS9jNgex5nqkW+cY7WZhxBigmieN5Qnw9ZosSNVC9KQKyb+GUaGyKUA=="],
 

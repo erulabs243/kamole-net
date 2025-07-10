@@ -1,20 +1,21 @@
 <script lang="ts">
-	import { MenuIcon, SearchIcon } from 'lucide-svelte';
+import { MenuIcon, SearchIcon } from "lucide-svelte";
+import { PUBLIC_WEBSITE_SLOGAN } from "$env/static/public";
 
-	import Kamole from '$lib/assets/kamole.png?enhanced';
+import Kamole from "$lib/assets/kamole.png?enhanced";
 
-	import type { Category } from '@/data/gql';
-	import { stack } from 'styled-system/patterns';
-	import { css, cx } from 'styled-system/css';
+import type { Category } from "@/data/gql";
+import { stack } from "styled-system/patterns";
+import { css, cx } from "styled-system/css";
 
-	import { buttonRecipe } from '$lib/components/ui/button';
-	import Drawer from './drawer.svelte';
+import { buttonRecipe } from "$lib/components/ui/button";
+import Drawer from "./drawer.svelte";
 
-	interface Props {
-		categories: Array<Category>;
-	}
+interface Props {
+	categories: Array<Category>;
+}
 
-	let { categories }: Props = $props();
+let { categories }: Props = $props();
 </script>
 
 <header>
@@ -69,7 +70,7 @@
 						fontWeight: 'semibold'
 					})}
 				>
-					Raconter nos communautés qui saignent
+					{PUBLIC_WEBSITE_SLOGAN}
 				</p>
 			</div>
 

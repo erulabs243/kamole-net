@@ -10,9 +10,9 @@ export const load = (async ({ url }) => {
 		? await postClient.getPosts(12)
 		: await postClient.searchPosts(search, 12);
 
-	const pageMetatags = Object.freeze({
+	const pageMetaTags = Object.freeze({
 		title: "Rechercher",
 	}) satisfies MetaTagsProps;
 
-	return { posts, pageMetatags };
+	return { posts, pageMetaTags };
 }) satisfies PageServerLoad;

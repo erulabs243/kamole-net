@@ -1,19 +1,19 @@
 <script lang="ts">
-	import { stack } from 'styled-system/patterns';
-	import { cx, css } from 'styled-system/css';
+import { stack } from "styled-system/patterns";
+import { cx, css } from "styled-system/css";
 
-	import type { Post } from '@/data/gql';
+import type { Post } from "@/data/gql";
 
-	import { badgeRecipe } from '$lib/components/ui/badge';
-	import Image from '$lib/components/widgets/image.svelte';
-	import Date from '$lib/components/widgets/date.svelte';
+import { badgeRecipe } from "$lib/components/ui/badge";
+import Image from "$lib/components/widgets/image.svelte";
+import Date from "$lib/components/widgets/date.svelte";
 
-	interface Props {
-		post: Post;
-	}
+interface Props {
+	post: Post;
+}
 
-	let { post }: Post = $props();
-	let category = $derived(post?.node?.categories?.nodes?.at(0));
+let { post }: Post = $props();
+let category = $derived(post?.node?.categories?.nodes?.at(0));
 </script>
 
 <div
@@ -63,7 +63,7 @@
 					lineHeight: '1.1',
 					fontWeight: 'semibold',
 					lineClamp: 3,
-					_groupHover: { color: 'fg.primary' }
+					_groupHover: { color: 'bg' }
 				})}
 			>
 				{post.node.title}

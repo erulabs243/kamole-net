@@ -1,21 +1,21 @@
 <script lang="ts">
-	import type { Post } from '@/data/gql';
+import type { Post } from "@/data/gql";
 
-	import { css, cx } from 'styled-system/css';
-	import { hstack } from 'styled-system/patterns';
-	import { cardSlotRecipe as card } from '$lib/components/ui/card';
-	import { badgeRecipe } from '$lib/components/ui/badge';
+import { css, cx } from "styled-system/css";
+import { hstack } from "styled-system/patterns";
+import { cardSlotRecipe as card } from "$lib/components/ui/card";
+import { badgeRecipe } from "$lib/components/ui/badge";
 
-	import Date from '$lib/components/widgets/date.svelte';
-	import Image from '$lib/components/widgets/image.svelte';
+import Date from "$lib/components/widgets/date.svelte";
+import Image from "$lib/components/widgets/image.svelte";
 
-	interface Props {
-		post: Post;
-	}
+interface Props {
+	post: Post;
+}
 
-	let { post }: Props = $props();
+let { post }: Props = $props();
 
-	let category = $derived(post.node.categories?.nodes.at(0));
+let category = $derived(post.node.categories?.nodes.at(0));
 </script>
 
 <article class={cx(card({ size: 'sm' }).root, 'group', css({ p: '0' }), 'group')}>
@@ -63,7 +63,7 @@
 						fontWeight: 'bold',
 						lineHeight: '1.1',
 						lineClamp: 3,
-						_groupHover: { color: 'fg.primary' }
+						_groupHover: { color: 'bg' }
 					})
 				)}
 			>

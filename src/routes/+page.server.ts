@@ -1,6 +1,7 @@
-import type { PageServerLoad } from './$types';
+import type { PageServerLoad } from "./$types";
+import type { MetaTagsProps } from "svelte-meta-tags";
 
-import { postClient } from '@/data/api';
+import { postClient } from "@/data/api";
 
 export const load = (async () => {
 	const latestPosts = await postClient.getPosts(13);
@@ -20,10 +21,14 @@ export const load = (async () => {
 	// TODO: make fetching popular async
 	const popular = [];
 
+	// Metatags
+	const pageMetaTags = Object.freeze({}) satisfies MetaTagsProps;
+
 	return {
 		first: firstPosts,
 		latest: remainingPosts,
 		pinned: pinned?.slice(0, 5),
-		popular: popular?.slice(0, 4) ?? []
+		popular: popular?.slice(0, 4) ?? [],
+		pageMetaTags,
 	};
 }) satisfies PageServerLoad;

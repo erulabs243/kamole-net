@@ -1,20 +1,20 @@
 <script lang="ts">
-	import { Dialog, Portal, Positioner } from '@ark-ui/svelte';
-	import { MenuIcon, XIcon } from 'lucide-svelte';
+import { Dialog, Portal, Positioner } from "@ark-ui/svelte";
+import { MenuIcon, XIcon } from "lucide-svelte";
 
-	import { css, cx } from 'styled-system/css';
-	import { vstack, center, hstack } from 'styled-system/patterns';
+import { css, cx } from "styled-system/css";
+import { vstack, center, hstack } from "styled-system/patterns";
 
-	import type { Category } from '@/data/gql';
+import type { Category } from "@/data/gql";
 
-	import { drawer } from '$lib/components/ui/drawer';
-	import { buttonRecipe } from '../ui/button';
+import { drawer } from "$lib/components/ui/drawer";
+import { buttonRecipe } from "../ui/button";
 
-	interface Props {
-		categories: Array<Category>;
-	}
+interface Props {
+	categories: Array<Category>;
+}
 
-	let { categories }: Props = $props();
+let { categories }: Props = $props();
 </script>
 
 <Dialog.Root>
@@ -128,6 +128,17 @@
 								)}
 							>
 								A propos de nous
+							</a>
+							<a
+								href="/contact"
+								class={cx(
+									buttonRecipe({
+										variant: 'subtle'
+									}),
+									css({ w: 'full', justifyContent: 'flex-start' })
+								)}
+							>
+								Contactez-nous
 							</a>
 						</nav>
 					</div>

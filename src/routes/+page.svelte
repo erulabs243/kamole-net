@@ -32,7 +32,7 @@ let { data }: PageProps = $props();
 				href="/latest-posts"
 				class={buttonRecipe({ variant: "outline"})}
 			>
-				Plus de publications
+				Lire plus d'articles
 			</a>
 		</div>
 	</SectionWithHeader>
@@ -41,7 +41,7 @@ let { data }: PageProps = $props();
 {#if data.pinned?.length > 0}
 	<!-- Pinned posts -->
 	<SectionWithHeader hasTopBorder title="Choix de la rédaction">
-		<PostsWithHighlight posts={data.pinned} />
+		<HomeMain posts={data.pinned} />
 	</SectionWithHeader>
 {/if}
 

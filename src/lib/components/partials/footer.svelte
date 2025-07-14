@@ -6,8 +6,6 @@ import { css, cx } from "styled-system/css";
 
 import Kamole from "$lib/assets/kamole.png?enhanced";
 
-import Contact from "./contact.svelte";
-
 import { buttonRecipe } from "../ui/button";
 </script>
 <footer class={css({
@@ -15,7 +13,6 @@ import { buttonRecipe } from "../ui/button";
     })}>
 
     <!-- Contact -->
-    <Contact />
 
   <!-- Default footer menu -->
   <div class={css({

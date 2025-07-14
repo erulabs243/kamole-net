@@ -5,8 +5,8 @@ import { PUBLIC_WEBSITE_SLOGAN } from "$env/static/public";
 import Kamole from "$lib/assets/kamole.png?enhanced";
 
 import type { Category } from "@/data/gql";
-import { stack } from "styled-system/patterns";
-import { css, cx } from "styled-system/css";
+import { stack, center } from "styled-system/patterns";
+import { css } from "styled-system/css";
 
 import { buttonRecipe } from "$lib/components/ui/button";
 import Drawer from "./drawer.svelte";
@@ -23,7 +23,8 @@ let { categories }: Props = $props();
 	<div
 		class={stack({
 			px: { base: '4', sm: '12' },
-			py: '2',
+			pb: "2",
+			pt: "4",
 			flexDir: 'row',
 			alignItems: 'center',
 			justify: 'space-between'
@@ -51,10 +52,25 @@ let { categories }: Props = $props();
 			</a>
 		</div>
 
+		<div class={center({
+				flexDir: "column",
+				flexGrow: "grow",
+				gap: "2"
+			})}>
 		<!-- Logo -->
 		<a href="/" aria-label="Kamole - Page d'accueil">
 			<enhanced:img src={Kamole} alt="Kamole" class={css({ w: '24' })} />
 		</a>
+		<p class={css({
+				hideFrom: "sm",
+				textAlign: "center",
+				fontStyle: "italic",
+				lineHeight: "1.1",
+				fontSize: "sm"
+			})}>
+			{PUBLIC_WEBSITE_SLOGAN}
+		</p>
+		</div>
 
 		<!-- Right navigation -->
 		<div

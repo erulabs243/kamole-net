@@ -1142,7 +1142,7 @@ type Category implements Node & TermNode & UniformResourceIdentifiable & Databas
     where: CategoryToPostConnectionWhereArgs
   ): CategoryToPostConnection
 
-  """The Yoast SEO data of the Categories taxonomy."""
+  """The Yoast SEO data of the Catégories taxonomy."""
   seo: TaxonomySEO
 
   """An alphanumeric identifier for the object unique to its type."""
@@ -2507,6 +2507,9 @@ enum PostObjectsConnectionOrderbyEnum {
 Publishing status that controls the visibility and editorial state of content. Determines whether content is published, pending review, in draft state, or private.
 """
 enum PostStatusEnum {
+  """Objects with the acf-disabled status"""
+  ACF_DISABLED
+
   """Automatically saved content that has not been manually saved"""
   AUTO_DRAFT
 
@@ -2539,6 +2542,9 @@ enum PostStatusEnum {
 
   """Objects with the request-pending status"""
   REQUEST_PENDING
+
+  """Objects with the spam status"""
+  SPAM
 
   """Content marked for deletion but still recoverable"""
   TRASH
@@ -4077,16 +4083,16 @@ enum CommentsConnectionOrderbyEnum {
 Moderation state for user comments. Determines whether comments are publicly visible, pending approval, or marked as spam.
 """
 enum CommentStatusEnum {
-  """Comments with the Approved status"""
+  """Comments with the Approuvé status"""
   APPROVE
 
-  """Comments with the Unapproved status"""
+  """Comments with the Désapprouvé status"""
   HOLD
 
-  """Comments with the Spam status"""
+  """Comments with the Indésirable status"""
   SPAM
 
-  """Comments with the Trash status"""
+  """Comments with the Corbeille status"""
   TRASH
 }
 
@@ -9042,7 +9048,7 @@ type Tag implements Node & TermNode & UniformResourceIdentifiable & DatabaseIden
     where: TagToPostConnectionWhereArgs
   ): TagToPostConnection
 
-  """The Yoast SEO data of the Tags taxonomy."""
+  """The Yoast SEO data of the Étiquettes taxonomy."""
   seo: TaxonomySEO
 
   """An alphanumeric identifier for the object unique to its type."""
@@ -10434,42 +10440,48 @@ type RootQueryToContentTypeConnectionPageInfo implements ContentTypeConnectionPa
 
 """The discussion setting type"""
 type DiscussionSettings {
-  """Allow people to submit comments on new posts."""
+  """
+  Autoriser les gens à envoyer des commentaires sur les nouvelles publications.
+  """
   defaultCommentStatus: String
 
   """
-  Allow link notifications from other blogs (pingbacks and trackbacks) on new articles.
+  Autoriser les liens de notification d’autres blogs (pings et rétroliens) sur les nouveaux articles.
   """
   defaultPingStatus: String
 }
 
 """The general setting type"""
 type GeneralSettings {
-  """A date format for all date strings."""
+  """Un format de date commun pour tous les réglages de dates."""
   dateFormat: String
 
-  """Site tagline."""
+  """Slogan du site."""
   description: String
 
-  """This address is used for admin purposes, like new user notification."""
+  """
+  Cette adresse est utilisée à des fins d’administration, comme les notifications de nouveaux comptes.
+  """
   email: String
 
-  """WordPress locale code."""
+  """Code local de l’installation WordPress."""
   language: String
 
-  """A day number of the week that the week should start on."""
+  """
+  Le numéro du jour de la semaine à laquelle la semaine devrait commencer.
+  """
   startOfWeek: Int
 
-  """A time format for all time strings."""
+  """Un format d’heure commun pour tous les réglages d’heures."""
   timeFormat: String
 
-  """A city in the same timezone as you."""
+  """Une ville dans le même fuseau horaire que le vôtre."""
   timezone: String
 
-  """Site title."""
+  """Titre du site."""
   title: String
 
-  """Site URL."""
+  """URL du site."""
   url: String
 }
 
@@ -11753,16 +11765,16 @@ type RootQueryToPostConnectionPageInfo implements PostConnectionPageInfo & WPPag
 
 """The reading setting type"""
 type ReadingSettings {
-  """The ID of the page that should display the latest posts"""
+  """L’ID de la page qui affichera les derniers articles"""
   pageForPosts: Int
 
-  """The ID of the page that should be displayed on the front page"""
+  """L’ID de la page qui doit être affiché sur la page d’accueil"""
   pageOnFront: Int
 
-  """Blog pages show at most."""
+  """Les pages de blog affichent au maximum."""
   postsPerPage: Int
 
-  """What to show on the front page"""
+  """Afficher quoi sur la page d’accueil"""
   showOnFront: String
 }
 
@@ -13127,13 +13139,15 @@ type RootQueryToUserConnectionPageInfo implements UserConnectionPageInfo & WPPag
 
 """The writing setting type"""
 type WritingSettings {
-  """Default post category."""
+  """Catégorie d’article par défaut."""
   defaultCategory: Int
 
-  """Default post format."""
+  """Format d’article par défaut."""
   defaultPostFormat: String
 
-  """Convert emoticons like :-) and :-P to graphics on display."""
+  """
+  Convertir les émoticônes, comme :-) et :-P, en images lors de l’affichage.
+  """
   useSmilies: Boolean
 }
 
@@ -14595,60 +14609,68 @@ input UpdateSettingsInput {
   """
   clientMutationId: String
 
-  """Allow people to submit comments on new posts."""
+  """
+  Autoriser les gens à envoyer des commentaires sur les nouvelles publications.
+  """
   discussionSettingsDefaultCommentStatus: String
 
   """
-  Allow link notifications from other blogs (pingbacks and trackbacks) on new articles.
+  Autoriser les liens de notification d’autres blogs (pings et rétroliens) sur les nouveaux articles.
   """
   discussionSettingsDefaultPingStatus: String
 
-  """A date format for all date strings."""
+  """Un format de date commun pour tous les réglages de dates."""
   generalSettingsDateFormat: String
 
-  """Site tagline."""
+  """Slogan du site."""
   generalSettingsDescription: String
 
-  """This address is used for admin purposes, like new user notification."""
+  """
+  Cette adresse est utilisée à des fins d’administration, comme les notifications de nouveaux comptes.
+  """
   generalSettingsEmail: String
 
-  """WordPress locale code."""
+  """Code local de l’installation WordPress."""
   generalSettingsLanguage: String
 
-  """A day number of the week that the week should start on."""
+  """
+  Le numéro du jour de la semaine à laquelle la semaine devrait commencer.
+  """
   generalSettingsStartOfWeek: Int
 
-  """A time format for all time strings."""
+  """Un format d’heure commun pour tous les réglages d’heures."""
   generalSettingsTimeFormat: String
 
-  """A city in the same timezone as you."""
+  """Une ville dans le même fuseau horaire que le vôtre."""
   generalSettingsTimezone: String
 
-  """Site title."""
+  """Titre du site."""
   generalSettingsTitle: String
 
-  """Site URL."""
+  """URL du site."""
   generalSettingsUrl: String
 
-  """The ID of the page that should display the latest posts"""
+  """L’ID de la page qui affichera les derniers articles"""
   readingSettingsPageForPosts: Int
 
-  """The ID of the page that should be displayed on the front page"""
+  """L’ID de la page qui doit être affiché sur la page d’accueil"""
   readingSettingsPageOnFront: Int
 
-  """Blog pages show at most."""
+  """Les pages de blog affichent au maximum."""
   readingSettingsPostsPerPage: Int
 
-  """What to show on the front page"""
+  """Afficher quoi sur la page d’accueil"""
   readingSettingsShowOnFront: String
 
-  """Default post category."""
+  """Catégorie d’article par défaut."""
   writingSettingsDefaultCategory: Int
 
-  """Default post format."""
+  """Format d’article par défaut."""
   writingSettingsDefaultPostFormat: String
 
-  """Convert emoticons like :-) and :-P to graphics on display."""
+  """
+  Convertir les émoticônes, comme :-) et :-P, en images lors de l’affichage.
+  """
   writingSettingsUseSmilies: Boolean
 }
 

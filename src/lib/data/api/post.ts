@@ -99,12 +99,19 @@ export const getPostsByCategory = async (
 	after: string | null = null,
 	before: string | null = null,
 ) => {
+	console.dir({
+		category,
+		after,
+		before,
+		limit,
+	});
 	return (
 		await client.query({
 			posts: {
 				__args: {
-					first: limit,
+					first: after ? limit : null,
 					after,
+					last: before ? limit : null,
 					before,
 					where: { categoryIn: [category] },
 				},

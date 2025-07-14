@@ -1,5 +1,5 @@
-import { client } from './client';
-import { seo } from './seo';
+import { client } from "./client";
+import { seo } from "./seo";
 
 export const getCategories = async () => {
 	return (
@@ -8,9 +8,9 @@ export const getCategories = async () => {
 				nodes: {
 					name: true,
 					slug: true,
-					seo
-				}
-			}
+					seo,
+				},
+			},
 		})
 	).categories;
 };
@@ -21,15 +21,15 @@ export const findCategory = async (category: string, limit: number = 12) => {
 			__args: {
 				first: limit,
 				where: {
-					slug: [category]
-				}
+					slug: [category],
+				},
 			},
 			nodes: {
 				id: true,
 				name: true,
 				slug: true,
-				seo
-			}
-		}
+				seo,
+			},
+		},
 	});
 };

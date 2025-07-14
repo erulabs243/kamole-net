@@ -5,8 +5,8 @@
 
 export type Scalars = {
     String: string,
-    Int: number,
     Boolean: boolean,
+    Int: number,
     ID: string,
     Float: number,
 }
@@ -260,7 +260,7 @@ export interface Category {
     parentId: (Scalars['ID'] | null)
     /** Connection between the Category type and the post type */
     posts: (CategoryToPostConnection | null)
-    /** The Yoast SEO data of the Categories taxonomy. */
+    /** The Yoast SEO data of the Catégories taxonomy. */
     seo: (TaxonomySEO | null)
     /** An alphanumeric identifier for the object unique to its type. */
     slug: (Scalars['String'] | null)
@@ -619,7 +619,7 @@ export type PostObjectsConnectionOrderbyEnum = 'AUTHOR' | 'COMMENT_COUNT' | 'DAT
 
 
 /** Publishing status that controls the visibility and editorial state of content. Determines whether content is published, pending review, in draft state, or private. */
-export type PostStatusEnum = 'AUTO_DRAFT' | 'DRAFT' | 'FUTURE' | 'INHERIT' | 'PENDING' | 'PRIVATE' | 'PUBLISH' | 'REQUEST_COMPLETED' | 'REQUEST_CONFIRMED' | 'REQUEST_FAILED' | 'REQUEST_PENDING' | 'TRASH'
+export type PostStatusEnum = 'ACF_DISABLED' | 'AUTO_DRAFT' | 'DRAFT' | 'FUTURE' | 'INHERIT' | 'PENDING' | 'PRIVATE' | 'PUBLISH' | 'REQUEST_COMPLETED' | 'REQUEST_CONFIRMED' | 'REQUEST_FAILED' | 'REQUEST_PENDING' | 'SPAM' | 'TRASH'
 
 
 /** Connection between the Category type and the ContentNode type */
@@ -2958,7 +2958,7 @@ export interface Tag {
     name: (Scalars['String'] | null)
     /** Connection between the Tag type and the post type */
     posts: (TagToPostConnection | null)
-    /** The Yoast SEO data of the Tags taxonomy. */
+    /** The Yoast SEO data of the Étiquettes taxonomy. */
     seo: (TaxonomySEO | null)
     /** An alphanumeric identifier for the object unique to its type. */
     slug: (Scalars['String'] | null)
@@ -3560,9 +3560,9 @@ export interface RootQueryToContentTypeConnectionPageInfo {
 
 /** The discussion setting type */
 export interface DiscussionSettings {
-    /** Allow people to submit comments on new posts. */
+    /** Autoriser les gens à envoyer des commentaires sur les nouvelles publications. */
     defaultCommentStatus: (Scalars['String'] | null)
-    /** Allow link notifications from other blogs (pingbacks and trackbacks) on new articles. */
+    /** Autoriser les liens de notification d’autres blogs (pings et rétroliens) sur les nouveaux articles. */
     defaultPingStatus: (Scalars['String'] | null)
     __typename: 'DiscussionSettings'
 }
@@ -3570,23 +3570,23 @@ export interface DiscussionSettings {
 
 /** The general setting type */
 export interface GeneralSettings {
-    /** A date format for all date strings. */
+    /** Un format de date commun pour tous les réglages de dates. */
     dateFormat: (Scalars['String'] | null)
-    /** Site tagline. */
+    /** Slogan du site. */
     description: (Scalars['String'] | null)
-    /** This address is used for admin purposes, like new user notification. */
+    /** Cette adresse est utilisée à des fins d’administration, comme les notifications de nouveaux comptes. */
     email: (Scalars['String'] | null)
-    /** WordPress locale code. */
+    /** Code local de l’installation WordPress. */
     language: (Scalars['String'] | null)
-    /** A day number of the week that the week should start on. */
+    /** Le numéro du jour de la semaine à laquelle la semaine devrait commencer. */
     startOfWeek: (Scalars['Int'] | null)
-    /** A time format for all time strings. */
+    /** Un format d’heure commun pour tous les réglages d’heures. */
     timeFormat: (Scalars['String'] | null)
-    /** A city in the same timezone as you. */
+    /** Une ville dans le même fuseau horaire que le vôtre. */
     timezone: (Scalars['String'] | null)
-    /** Site title. */
+    /** Titre du site. */
     title: (Scalars['String'] | null)
-    /** Site URL. */
+    /** URL du site. */
     url: (Scalars['String'] | null)
     __typename: 'GeneralSettings'
 }
@@ -4137,13 +4137,13 @@ export interface RootQueryToPostConnectionPageInfo {
 
 /** The reading setting type */
 export interface ReadingSettings {
-    /** The ID of the page that should display the latest posts */
+    /** L’ID de la page qui affichera les derniers articles */
     pageForPosts: (Scalars['Int'] | null)
-    /** The ID of the page that should be displayed on the front page */
+    /** L’ID de la page qui doit être affiché sur la page d’accueil */
     pageOnFront: (Scalars['Int'] | null)
-    /** Blog pages show at most. */
+    /** Les pages de blog affichent au maximum. */
     postsPerPage: (Scalars['Int'] | null)
-    /** What to show on the front page */
+    /** Afficher quoi sur la page d’accueil */
     showOnFront: (Scalars['String'] | null)
     __typename: 'ReadingSettings'
 }
@@ -4827,11 +4827,11 @@ export interface RootQueryToUserConnectionPageInfo {
 
 /** The writing setting type */
 export interface WritingSettings {
-    /** Default post category. */
+    /** Catégorie d’article par défaut. */
     defaultCategory: (Scalars['Int'] | null)
-    /** Default post format. */
+    /** Format d’article par défaut. */
     defaultPostFormat: (Scalars['String'] | null)
-    /** Convert emoticons like :-) and :-P to graphics on display. */
+    /** Convertir les émoticônes, comme :-) et :-P, en images lors de l’affichage. */
     useSmilies: (Scalars['Boolean'] | null)
     __typename: 'WritingSettings'
 }
@@ -6166,7 +6166,7 @@ export interface CategoryGenqlSelection{
     before?: (Scalars['String'] | null), 
     /** Arguments for filtering the connection */
     where?: (CategoryToPostConnectionWhereArgs | null)} })
-    /** The Yoast SEO data of the Categories taxonomy. */
+    /** The Yoast SEO data of the Catégories taxonomy. */
     seo?: TaxonomySEOGenqlSelection
     /** An alphanumeric identifier for the object unique to its type. */
     slug?: boolean | number
@@ -11697,7 +11697,7 @@ export interface TagGenqlSelection{
     before?: (Scalars['String'] | null), 
     /** Arguments for filtering the connection */
     where?: (TagToPostConnectionWhereArgs | null)} })
-    /** The Yoast SEO data of the Tags taxonomy. */
+    /** The Yoast SEO data of the Étiquettes taxonomy. */
     seo?: TaxonomySEOGenqlSelection
     /** An alphanumeric identifier for the object unique to its type. */
     slug?: boolean | number
@@ -12728,9 +12728,9 @@ export interface RootQueryToContentTypeConnectionPageInfoGenqlSelection{
 
 /** The discussion setting type */
 export interface DiscussionSettingsGenqlSelection{
-    /** Allow people to submit comments on new posts. */
+    /** Autoriser les gens à envoyer des commentaires sur les nouvelles publications. */
     defaultCommentStatus?: boolean | number
-    /** Allow link notifications from other blogs (pingbacks and trackbacks) on new articles. */
+    /** Autoriser les liens de notification d’autres blogs (pings et rétroliens) sur les nouveaux articles. */
     defaultPingStatus?: boolean | number
     __typename?: boolean | number
     __scalar?: boolean | number
@@ -12739,23 +12739,23 @@ export interface DiscussionSettingsGenqlSelection{
 
 /** The general setting type */
 export interface GeneralSettingsGenqlSelection{
-    /** A date format for all date strings. */
+    /** Un format de date commun pour tous les réglages de dates. */
     dateFormat?: boolean | number
-    /** Site tagline. */
+    /** Slogan du site. */
     description?: boolean | number
-    /** This address is used for admin purposes, like new user notification. */
+    /** Cette adresse est utilisée à des fins d’administration, comme les notifications de nouveaux comptes. */
     email?: boolean | number
-    /** WordPress locale code. */
+    /** Code local de l’installation WordPress. */
     language?: boolean | number
-    /** A day number of the week that the week should start on. */
+    /** Le numéro du jour de la semaine à laquelle la semaine devrait commencer. */
     startOfWeek?: boolean | number
-    /** A time format for all time strings. */
+    /** Un format d’heure commun pour tous les réglages d’heures. */
     timeFormat?: boolean | number
-    /** A city in the same timezone as you. */
+    /** Une ville dans le même fuseau horaire que le vôtre. */
     timezone?: boolean | number
-    /** Site title. */
+    /** Titre du site. */
     title?: boolean | number
-    /** Site URL. */
+    /** URL du site. */
     url?: boolean | number
     __typename?: boolean | number
     __scalar?: boolean | number
@@ -13723,13 +13723,13 @@ export interface RootQueryToPostConnectionPageInfoGenqlSelection{
 
 /** The reading setting type */
 export interface ReadingSettingsGenqlSelection{
-    /** The ID of the page that should display the latest posts */
+    /** L’ID de la page qui affichera les derniers articles */
     pageForPosts?: boolean | number
-    /** The ID of the page that should be displayed on the front page */
+    /** L’ID de la page qui doit être affiché sur la page d’accueil */
     pageOnFront?: boolean | number
-    /** Blog pages show at most. */
+    /** Les pages de blog affichent au maximum. */
     postsPerPage?: boolean | number
-    /** What to show on the front page */
+    /** Afficher quoi sur la page d’accueil */
     showOnFront?: boolean | number
     __typename?: boolean | number
     __scalar?: boolean | number
@@ -14666,11 +14666,11 @@ export interface RootQueryToUserConnectionPageInfoGenqlSelection{
 
 /** The writing setting type */
 export interface WritingSettingsGenqlSelection{
-    /** Default post category. */
+    /** Catégorie d’article par défaut. */
     defaultCategory?: boolean | number
-    /** Default post format. */
+    /** Format d’article par défaut. */
     defaultPostFormat?: boolean | number
-    /** Convert emoticons like :-) and :-P to graphics on display. */
+    /** Convertir les émoticônes, comme :-) et :-P, en images lors de l’affichage. */
     useSmilies?: boolean | number
     __typename?: boolean | number
     __scalar?: boolean | number
@@ -15703,41 +15703,41 @@ export interface UpdatePostFormatPayloadGenqlSelection{
 export interface UpdateSettingsInput {
 /** This is an ID that can be passed to a mutation by the client to track the progress of mutations and catch possible duplicate mutation submissions. */
 clientMutationId?: (Scalars['String'] | null),
-/** Allow people to submit comments on new posts. */
+/** Autoriser les gens à envoyer des commentaires sur les nouvelles publications. */
 discussionSettingsDefaultCommentStatus?: (Scalars['String'] | null),
-/** Allow link notifications from other blogs (pingbacks and trackbacks) on new articles. */
+/** Autoriser les liens de notification d’autres blogs (pings et rétroliens) sur les nouveaux articles. */
 discussionSettingsDefaultPingStatus?: (Scalars['String'] | null),
-/** A date format for all date strings. */
+/** Un format de date commun pour tous les réglages de dates. */
 generalSettingsDateFormat?: (Scalars['String'] | null),
-/** Site tagline. */
+/** Slogan du site. */
 generalSettingsDescription?: (Scalars['String'] | null),
-/** This address is used for admin purposes, like new user notification. */
+/** Cette adresse est utilisée à des fins d’administration, comme les notifications de nouveaux comptes. */
 generalSettingsEmail?: (Scalars['String'] | null),
-/** WordPress locale code. */
+/** Code local de l’installation WordPress. */
 generalSettingsLanguage?: (Scalars['String'] | null),
-/** A day number of the week that the week should start on. */
+/** Le numéro du jour de la semaine à laquelle la semaine devrait commencer. */
 generalSettingsStartOfWeek?: (Scalars['Int'] | null),
-/** A time format for all time strings. */
+/** Un format d’heure commun pour tous les réglages d’heures. */
 generalSettingsTimeFormat?: (Scalars['String'] | null),
-/** A city in the same timezone as you. */
+/** Une ville dans le même fuseau horaire que le vôtre. */
 generalSettingsTimezone?: (Scalars['String'] | null),
-/** Site title. */
+/** Titre du site. */
 generalSettingsTitle?: (Scalars['String'] | null),
-/** Site URL. */
+/** URL du site. */
 generalSettingsUrl?: (Scalars['String'] | null),
-/** The ID of the page that should display the latest posts */
+/** L’ID de la page qui affichera les derniers articles */
 readingSettingsPageForPosts?: (Scalars['Int'] | null),
-/** The ID of the page that should be displayed on the front page */
+/** L’ID de la page qui doit être affiché sur la page d’accueil */
 readingSettingsPageOnFront?: (Scalars['Int'] | null),
-/** Blog pages show at most. */
+/** Les pages de blog affichent au maximum. */
 readingSettingsPostsPerPage?: (Scalars['Int'] | null),
-/** What to show on the front page */
+/** Afficher quoi sur la page d’accueil */
 readingSettingsShowOnFront?: (Scalars['String'] | null),
-/** Default post category. */
+/** Catégorie d’article par défaut. */
 writingSettingsDefaultCategory?: (Scalars['Int'] | null),
-/** Default post format. */
+/** Format d’article par défaut. */
 writingSettingsDefaultPostFormat?: (Scalars['String'] | null),
-/** Convert emoticons like :-) and :-P to graphics on display. */
+/** Convertir les émoticônes, comme :-) et :-P, en images lors de l’affichage. */
 writingSettingsUseSmilies?: (Scalars['Boolean'] | null)}
 
 
@@ -19105,6 +19105,7 @@ export const enumPostObjectsConnectionOrderbyEnum = {
 }
 
 export const enumPostStatusEnum = {
+   ACF_DISABLED: 'ACF_DISABLED' as const,
    AUTO_DRAFT: 'AUTO_DRAFT' as const,
    DRAFT: 'DRAFT' as const,
    FUTURE: 'FUTURE' as const,
@@ -19116,6 +19117,7 @@ export const enumPostStatusEnum = {
    REQUEST_CONFIRMED: 'REQUEST_CONFIRMED' as const,
    REQUEST_FAILED: 'REQUEST_FAILED' as const,
    REQUEST_PENDING: 'REQUEST_PENDING' as const,
+   SPAM: 'SPAM' as const,
    TRASH: 'TRASH' as const
 }
 

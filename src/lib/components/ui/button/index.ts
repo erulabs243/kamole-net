@@ -102,10 +102,12 @@ export const buttonRecipe = cva({
 				borderColor: "border",
 				color: "fg.muted",
 				_hover: {
-					bg: "bg.subtle",
+					bg: "bg",
+					color: "white",
 				},
 				_expanded: {
-					bg: "bg.subtle",
+					bg: "bg",
+					color: "white",
 				},
 			},
 		},

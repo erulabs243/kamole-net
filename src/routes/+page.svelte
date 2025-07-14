@@ -1,10 +1,17 @@
 <script lang="ts">
-	import type { PageProps } from './$types';
-	import { css } from 'styled-system/css';
+import type { PageProps } from "./$types";
+import { css } from "styled-system/css";
 
-	import { HomeMain, Posts, SectionWithHeader, PostsWithHighlight } from '@/components/partials';
+import { buttonRecipe } from "@/components/ui/button";
 
-	let { data }: PageProps = $props();
+import {
+	HomeMain,
+	Posts,
+	SectionWithHeader,
+	PostsWithHighlight,
+} from "@/components/partials";
+
+let { data }: PageProps = $props();
 </script>
 
 <HomeMain posts={data.first} />
@@ -13,6 +20,21 @@
 {#if data.latest?.length > 0}
 	<SectionWithHeader title="Dernières publications" hasTopBorder>
 		<Posts posts={data.latest} />
+
+		<div class={css({
+				w: "full",
+				mt: "4",
+				py: "2",
+				display: "flex",
+				justifyContent: "flex-end"
+			})}>
+			<a
+				href="/latest-posts"
+				class={buttonRecipe({ variant: "outline"})}
+			>
+				Plus de publications
+			</a>
+		</div>
 	</SectionWithHeader>
 {/if}
 

@@ -1,5 +1,6 @@
 <script lang="ts">
-import { Dialog, Portal, Positioner } from "@ark-ui/svelte";
+import { afterNavigate } from "$app/navigation";
+import { Dialog, Portal, Positioner, useDialog } from "@ark-ui/svelte";
 import { MenuIcon, XIcon } from "lucide-svelte";
 
 import { css, cx } from "styled-system/css";
@@ -13,11 +14,14 @@ import { buttonRecipe } from "../ui/button";
 interface Props {
 	categories: Array<Category>;
 }
+const dialog = useDialog();
+// Close drawer after navigation
+afterNavigate(() => dialog().setOpen(false));
 
 let { categories }: Props = $props();
 </script>
 
-<Dialog.Root>
+<Dialog.RootProvider value={dialog}>
 	<Dialog.Trigger
 		class={css({
 			display: 'inline-flex',
@@ -146,4 +150,4 @@ let { categories }: Props = $props();
 			</Dialog.Content>
 		</Dialog.Positioner>
 	</Portal>
-</Dialog.Root>
+</Dialog.RootProvider>

@@ -1,15 +1,16 @@
 <script lang="ts">
-	import { page } from '$app/state';
-	import type { PageProps } from './$types';
+import { page } from "$app/state";
+import type { PageProps } from "./$types";
 
-	import { css } from 'styled-system/css';
+import { css } from "styled-system/css";
 
-	import { Posts, PageHeading } from '@/components/partials';
-	import { Pagination } from '@/components/widgets';
+import { Posts, PageHeading } from "@/components/partials";
+import { Pagination, Breadcrumbs } from "@/components/widgets";
 
-	let { data }: PageProps = $props();
+let { data }: PageProps = $props();
 </script>
 
+<Breadcrumbs />
 <PageHeading title={data.author.name} />
 
 {#await data.posts}
@@ -18,9 +19,6 @@
 {:then posts}
 	<section>
 		<Posts posts={posts.edges} />
-
-		<p>{posts?.pageInfo.hasNextPage}</p>
-		<p>{posts?.pageInfo.hasPreviousPage}</p>
 
 		<!-- TODO: pagination -->
 		<Pagination

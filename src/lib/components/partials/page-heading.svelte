@@ -1,11 +1,11 @@
 <script lang="ts">
-	import { css } from 'styled-system/css';
+import { css } from "styled-system/css";
 
-	interface Props {
-		title: string;
-	}
+interface Props {
+	title: string;
+}
 
-	let { title }: Props = $props();
+let { title }: Props = $props();
 </script>
 
 <header
@@ -15,7 +15,7 @@
 >
 	<h1
 		class={css({
-			textStyle: 'h2',
+			textStyle: { base: "h4", md: "h2"},
 			textAlign: 'center',
 			fontWeight: 'bold'
 		})}

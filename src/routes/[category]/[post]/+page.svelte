@@ -1,5 +1,6 @@
 <script lang="ts">
 import type { PageProps } from "./$types";
+import { page } from "$app/state";
 
 import { Avatar } from "@ark-ui/svelte/avatar";
 

@@ -7,10 +7,14 @@ import { css, cx } from "styled-system/css";
 import Kamole from "$lib/assets/kamole.png?enhanced";
 
 import { buttonRecipe } from "../ui/button";
+import { AdBanner } from "../widgets";
 </script>
 <footer class={css({
         pb: "4",
     })}>
+
+    <!-- Ad banner -->
+    <AdBanner />
 
     <!-- Contact -->
 
@@ -22,7 +26,9 @@ import { buttonRecipe } from "../ui/button";
     <h5 class={css({
         textAlign: "center",
         textStyle: "h6",
-        fontWeight: "bold"
+        fontWeight: "bold",
+        fontStyle: "italic",
+        fontFamily: "ibmSerif"
       })}>
       {PUBLIC_WEBSITE_SLOGAN}
     </h5>

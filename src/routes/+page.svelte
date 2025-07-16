@@ -10,15 +10,19 @@ import {
 	SectionWithHeader,
 	PostsWithHighlight,
 } from "@/components/partials";
+import { AdBanner } from "@/components/widgets";
 
 let { data }: PageProps = $props();
 </script>
 
 <HomeMain posts={data.first} />
 
+<!-- Ad banner -->
+<AdBanner />
+
 <!-- Latest posts -->
 {#if data.latest?.length > 0}
-	<SectionWithHeader title="Dernières publications" hasTopBorder>
+	<SectionWithHeader title="Dernières publications">
 		<Posts posts={data.latest} />
 
 		<div class={css({

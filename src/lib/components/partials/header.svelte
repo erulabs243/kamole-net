@@ -18,7 +18,12 @@ interface Props {
 let { categories }: Props = $props();
 </script>
 
-<header>
+<header class={css({
+		pos: "sticky",
+		top: "0",
+		bg: "neutral.50",
+		zIndex: "100"
+	})}>
 	<!-- Title with sidebar -->
 	<div
 		class={stack({
@@ -66,7 +71,8 @@ let { categories }: Props = $props();
 				textAlign: "center",
 				fontStyle: "italic",
 				lineHeight: "1.1",
-				fontSize: "sm"
+				fontSize: "sm",
+				fontFamily: "ibmSerif"
 			})}>
 			{PUBLIC_WEBSITE_SLOGAN}
 		</p>
@@ -83,7 +89,9 @@ let { categories }: Props = $props();
 					class={css({
 						textStyle: 'paragraph',
 						fontSize: 'sm',
-						fontWeight: 'semibold'
+						fontWeight: 'semibold',
+						fontFamily: "ibmSerif",
+						fontStyle: "italic"
 					})}
 				>
 					{PUBLIC_WEBSITE_SLOGAN}

@@ -33,7 +33,7 @@ export interface Client {
 
 export const createClient = function (options?: ClientOptions): Client {
   return createClientOriginal({
-    url: 'https://admin.kamole.net/graphql',
+    url: 'http://localhost:10008/graphql',
 
     ...options,
     queryRoot: typeMap.Query!,

@@ -22,7 +22,7 @@ export const load = (async ({ params, url }) => {
 	// Metatags
 	const pageMetaTags = Object.freeze({
 		title: category?.seo.title ?? PUBLIC_WEBSITE_NAME,
-		description: category?.seo?.metaDesc,
+		description: category?.seo?.metaDesc ?? "",
 		openGraph: {
 			title: category?.seo?.title,
 			description:

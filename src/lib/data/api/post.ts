@@ -1,4 +1,4 @@
-import { client } from "./client";
+import { client, generatePaginationArgs } from "./client";
 import { seo } from "./seo";
 
 export const getPosts = async (
@@ -6,13 +6,13 @@ export const getPosts = async (
 	after: string | null = null,
 	before: string | null = null,
 ) => {
+	const args = generatePaginationArgs(limit, before, after);
+
 	return (
 		await client.query({
 			posts: {
 				__args: {
-					first: limit,
-					after,
-					before,
+					...args,
 				},
 				pageInfo: {
 					hasNextPage: true,
@@ -101,20 +101,13 @@ export const getPostsByCategory = async (
 	after: string | null = null,
 	before: string | null = null,
 ) => {
-	console.dir({
-		category,
-		after,
-		before,
-		limit,
-	});
+	const args = generatePaginationArgs(limit, before, after);
+
 	return (
 		await client.query({
 			posts: {
 				__args: {
-					first: after ? limit : null,
-					after,
-					last: before ? limit : null,
-					before,
+					...args,
 					where: { categoryIn: [category] },
 				},
 				pageInfo: {
@@ -243,13 +236,13 @@ export const searchPosts = async (
 	after: string | null = null,
 	before: string | null = null,
 ) => {
+	const args = generatePaginationArgs(limit, before, after);
+
 	return (
 		await client.query({
 			posts: {
 				__args: {
-					first: limit,
-					after,
-					before,
+					...args,
 					where: { search: term },
 				},
 				pageInfo: {

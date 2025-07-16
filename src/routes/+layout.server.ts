@@ -1,6 +1,10 @@
 import type { LayoutServerLoad } from "./$types";
 import type { MetaTagsProps } from "svelte-meta-tags";
-import { PUBLIC_WEBSITE_NAME, PUBLIC_WEBSITE_SLOGAN } from "$env/static/public";
+import {
+	PUBLIC_WEBSITE_NAME,
+	PUBLIC_WEBSITE_SLOGAN,
+	PUBLIC_WEBSITE_URL,
+} from "$env/static/public";
 
 import { categoryClient } from "@/data/api";
 
@@ -20,6 +24,16 @@ export const load = (async ({ url }) => {
 			title: `Accueil | ${PUBLIC_WEBSITE_NAME}`,
 			description: PUBLIC_WEBSITE_SLOGAN,
 			siteName: PUBLIC_WEBSITE_NAME,
+			images: [
+				{
+					url: `${PUBLIC_WEBSITE_URL}/kamole-card.png`,
+					alt: PUBLIC_WEBSITE_NAME,
+				},
+			],
+		},
+		twitter: {
+			image: `${PUBLIC_WEBSITE_URL}/kamole-card.png`,
+			alt: PUBLIC_WEBSITE_NAME,
 		},
 	}) satisfies MetaTagsProps;
 

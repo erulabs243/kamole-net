@@ -24,7 +24,12 @@ let category = $derived(post?.node?.categories?.nodes?.at(0));
 		'group'
 	)}
 >
-	<div class={css({ w: { base: '1/3', sm: 'full' } })}>
+	<div class={css({
+			w: { base: '1/3', sm: 'full' },
+			h: { base: "full", sm: "40"},
+			overflow: "hidden",
+			rounded: "sm"
+		})}>
 		<a href={`/${category.slug}/${post.node.slug}`}>
 			<Image
 				src={post?.node.featuredImage?.node?.sourceUrl}

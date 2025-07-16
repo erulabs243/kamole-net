@@ -4,13 +4,13 @@ import type { MetaTagsProps } from "svelte-meta-tags";
 import { postClient } from "@/data/api";
 
 export const load = (async () => {
-	const latestPosts = await postClient.getPosts(13);
+	const latestPosts = await postClient.getPosts(11);
 
 	// Three latest posts
 	const firstPosts = latestPosts?.edges?.slice(0, 3) ?? [];
 
 	// Next latest
-	const remainingPosts = latestPosts?.edges?.slice(5, 8) ?? [];
+	const remainingPosts = latestPosts?.edges?.slice(3, 11) ?? [];
 
 	// Pinned posts
 	// TODO: extends WPGraphql

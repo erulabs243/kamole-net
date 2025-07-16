@@ -1,16 +1,16 @@
 <script lang="ts">
-	import { grid, gridItem } from 'styled-system/patterns';
-	import { css, cx } from 'styled-system/css';
+import { grid, gridItem } from "styled-system/patterns";
+import { css, cx } from "styled-system/css";
 
-	import type { Post as PostType } from '@/data/gql';
+import type { Post as PostType } from "@/data/gql";
 
-	import Post from '../cards/post.svelte';
+import Post from "../cards/post.svelte";
 
-	interface Props {
-		posts: Array<PostType>;
-	}
+interface Props {
+	posts: Array<PostType>;
+}
 
-	let { posts }: Props = $props();
+let { posts }: Props = $props();
 </script>
 
 <div>

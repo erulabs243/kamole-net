@@ -26,6 +26,7 @@ export const getPosts = async (
 						slug: true,
 						isSticky: true,
 						date: true,
+						excerpt: true,
 						featuredImage: {
 							node: {
 								sourceUrl: true,
@@ -65,6 +66,7 @@ export const getPinnedPosts = async (limit: number = 8) => {
 						slug: true,
 						isSticky: true,
 						date: true,
+						excerpt: true,
 						featuredImage: {
 							node: {
 								sourceUrl: true,
@@ -127,6 +129,7 @@ export const getPostsByCategory = async (
 						slug: true,
 						isSticky: true,
 						date: true,
+						excerpt: true,
 						featuredImage: {
 							node: {
 								sourceUrl: true,
@@ -261,6 +264,7 @@ export const searchPosts = async (
 						slug: true,
 						isSticky: true,
 						date: true,
+						excerpt: true,
 						featuredImage: {
 							node: {
 								sourceUrl: true,

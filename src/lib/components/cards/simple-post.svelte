@@ -11,9 +11,10 @@ import Image from "$lib/components/widgets/image.svelte";
 
 interface Props {
 	post: Post;
+	hasExcerpt?: boolean;
 }
 
-let { post }: Props = $props();
+let { post, hasExcerpt = false }: Props = $props();
 
 let category = $derived(post.node.categories?.nodes.at(0));
 </script>
@@ -70,5 +71,17 @@ let category = $derived(post.node.categories?.nodes.at(0));
 				{post.node.title}
 			</h3>
 		</a>
+		{#if hasExcerpt}
+			<a href={`/${category.slug}/${post.node.slug}`}>
+				<p class={css({
+						color: "neutral.700",
+						fontSize: { base: "sm", sm: "lg"},
+						pt: "2",
+						lineClamp: 3
+					})}>
+					{@html post.node.excerpt}
+				</p>			
+			</a>
+		{/if}
 	</div>
 </article>

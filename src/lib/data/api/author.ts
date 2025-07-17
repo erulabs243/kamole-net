@@ -1,44 +1,30 @@
-import { seo } from './seo';
-import { client } from './client';
+import { seo } from "./seo";
+import { client, generatePaginationArgs } from "./client";
 
-export const getAuthor = async (author: string) => {
-	return (
-		await client.query({
-			users: {
-				__args: {
-					where: { nicename: author }
-				},
-				nodes: {
-					name: true,
-					firstName: true,
-					lastName: true,
-					id: true
-				}
-			}
-		})
-	).users;
-};
-
-export const getPostsByAuthor = async (
+export const getAuthor = async (
 	author: string,
 	limit: number = 12,
 	after: string | null = null,
-	before: string | null = null
+	before: string | null = null,
 ) => {
-	return (
-		await client.query({
+	const args = generatePaginationArgs(limit, before, after);
+	return await client.query({
+		user: {
+			__args: {
+				id: author,
+			},
+			name: true,
+			firstName: true,
+			lastName: true,
 			posts: {
 				__args: {
-					first: limit,
-					after,
-					before,
-					where: { authorName: author }
+					...args,
 				},
 				pageInfo: {
 					hasNextPage: true,
 					hasPreviousPage: true,
 					endCursor: true,
-					startCursor: true
+					startCursor: true,
 				},
 				edges: {
 					node: {
@@ -46,28 +32,28 @@ export const getPostsByAuthor = async (
 						slug: true,
 						isSticky: true,
 						date: true,
+						excerpt: true,
 						featuredImage: {
 							node: {
 								sourceUrl: true,
-								altText: true
-							}
+								altText: true,
+							},
 						},
 						tags: {
 							nodes: {
 								name: true,
-								slug: true
-							}
+								slug: true,
+							},
 						},
 						categories: {
 							nodes: {
 								name: true,
-								slug: true
-							}
+								slug: true,
+							},
 						},
-						seo
-					}
-				}
-			}
-		})
-	).posts;
+					},
+				},
+			},
+		},
+	});
 };

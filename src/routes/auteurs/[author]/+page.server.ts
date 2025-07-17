@@ -1,22 +1,26 @@
-import { error } from '@sveltejs/kit';
-import type { PageServerLoad } from './$types';
+import { error } from "@sveltejs/kit";
+import type { PageServerLoad } from "./$types";
 
-import { authorClient } from '@/data/api';
+import { authorClient } from "@/data/api";
 
-export const load = (async ({ params }) => {
-	const response = await authorClient.getAuthor(params.author);
-	// FIXME: change the name used to fetch the author
+export const load = (async ({ params, url }) => {
+	const authorId = params.author.substring(params.author.lastIndexOf("-") + 1);
 
-	if (!response?.nodes.length) {
+	const after = url.searchParams.get("after") || null;
+	const before = url.searchParams.get("before") || null;
+
+	const response = await authorClient.getAuthor(authorId, 12, after, before);
+
+	if (!response?.user) {
 		throw error(404, {
-			message: 'Auteur introuvable'
+			message: "Auteur introuvable",
 		});
 	}
 
-	const author = response.nodes[0];
+	const author = response.user;
 
 	return {
-		posts: authorClient.getPostsByAuthor(author.name!),
-		author
+		author,
+		posts: author.posts,
 	};
 }) satisfies PageServerLoad;

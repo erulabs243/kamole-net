@@ -68,7 +68,7 @@ let { data }: PageProps = $props();
 
 				<!-- Author -->
 				<a
-					href={`/auteurs/${data.post.author.node.name}`}
+					href={`/auteurs/${data.post.author.node.name}-${data.post.author.node.id}`}
 					class={css({
 						display: 'inline-flex',
 						gap: '2',

@@ -5,28 +5,24 @@ import type { PageProps } from "./$types";
 import { css } from "styled-system/css";
 
 import { Posts, PageHeading } from "@/components/partials";
-import { Pagination, Breadcrumbs } from "@/components/widgets";
+import { Pagination } from "@/components/widgets";
 
 let { data }: PageProps = $props();
 </script>
 
-<Breadcrumbs />
-<PageHeading title={data.author.name} />
+<PageHeading
+	title={`${data.author.firstName} ${data.author.lastName}` ?? data.author.name}
+/>
 
-{#await data.posts}
-	<!-- TODO: create loader -->
-	<p>Loading posts</p>
-{:then posts}
 	<section>
-		<Posts posts={posts.edges} />
+		<Posts posts={data.posts.edges} />
 
 		<!-- TODO: pagination -->
 		<Pagination
 			url={page.url.pathname}
-			before={posts?.pageInfo.startCursor || null}
-			after={posts?.pageInfo.endCursor || null}
-			hasNextPage={posts?.pageInfo.hasNextPage}
-			hasPreviousPage={posts?.pageInfo.hasPreviousPage}
+			before={data.posts?.pageInfo.startCursor || null}
+			after={data.posts?.pageInfo.endCursor || null}
+			hasNextPage={data.posts?.pageInfo.hasNextPage}
+			hasPreviousPage={data.posts?.pageInfo.hasPreviousPage}
 		/>
 	</section>
-{/await}

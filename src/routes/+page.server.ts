@@ -1,7 +1,7 @@
-import type { PageServerLoad } from "./$types";
+import type { PageServerLoad } from './$types';
 
-import { postClient } from "@/data/api";
-import { generateMetaTags } from "@/utils/seo";
+import { postClient } from '@/data/api';
+import { generateMetaTags } from '@/utils/seo';
 
 export const load = (async () => {
 	const latestPosts = await postClient.getPosts(11);
@@ -29,6 +29,6 @@ export const load = (async () => {
 		latest: remainingPosts,
 		pinned: pinned?.slice(0, 3),
 		popular: popular?.slice(0, 4) ?? [],
-		pageMetaTags,
+		pageMetaTags
 	};
 }) satisfies PageServerLoad;

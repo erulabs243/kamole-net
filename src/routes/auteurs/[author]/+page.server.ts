@@ -20,7 +20,7 @@ export const load = (async ({ params, url }) => {
 
 	const author = response.user;
 	const pageMetaTags = generateMetaTags({
-		title: `${author.firstName} ${author.lastName}` ?? author.name,
+		title: `${author.firstName} ${author.lastName}`,
 	});
 
 	return {

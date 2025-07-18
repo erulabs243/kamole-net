@@ -1,7 +1,7 @@
-import type { MetaTagsProps } from "svelte-meta-tags";
+import type { MetaTagsProps } from 'svelte-meta-tags';
 
-import type { TaxonomySEO } from "@/data/gql";
-import { PUBLIC_WEBSITE_NAME } from "$env/static/public";
+import type { TaxonomySEO } from '@/data/gql';
+import { PUBLIC_WEBSITE_NAME } from '$env/static/public';
 
 // FIXME: Seo POST type schema
 
@@ -15,8 +15,8 @@ export const generateMetaTags = (seo: TaxonomySEO, url?: string) => {
 			url,
 			description: seo.opengraphDescription ?? seo.metaDesc,
 			siteName: PUBLIC_WEBSITE_NAME,
-			type: seo.opengraphType,
-		},
+			type: seo.opengraphType
+		}
 
 		// TODO: complete other metatags
 	}) satisfies MetaTagsProps;

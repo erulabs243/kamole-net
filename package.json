@@ -38,7 +38,6 @@
 		"eslint-plugin-svelte": "^3.0.0",
 		"globals": "^16.0.0",
 		"husky": "^9.1.7",
-		"lint-staged": "^16.1.2",
 		"oxlint": "^1.5.0",
 		"pandacss-preset-typography": "^0.1.6",
 		"prettier": "^3.4.2",

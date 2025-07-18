@@ -1,4 +1,4 @@
-import type { TaxonomySEOGenqlSelection } from "../gql";
+import type { TaxonomySEOGenqlSelection } from '../gql';
 
 export const seo = {
 	metaDesc: true,
@@ -12,10 +12,10 @@ export const seo = {
 	opengraphType: true,
 	opengraphImage: {
 		altText: true,
-		sourceUrl: true,
+		sourceUrl: true
 	},
 	twitterImage: {
 		altText: true,
-		sourceUrl: true,
-	},
+		sourceUrl: true
+	}
 } satisfies TaxonomySEOGenqlSelection;

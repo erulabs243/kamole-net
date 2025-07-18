@@ -1,7 +1,7 @@
-import type { PageServerLoad } from "./$types";
-import type { MetaTagsProps } from "svelte-meta-tags";
+import type { PageServerLoad } from './$types';
+import type { MetaTagsProps } from 'svelte-meta-tags';
 
-import { postClient } from "@/data/api";
+import { postClient } from '@/data/api';
 
 export const load = (async () => {
 	const latestPosts = await postClient.getPosts(11);
@@ -29,6 +29,6 @@ export const load = (async () => {
 		latest: remainingPosts,
 		pinned: pinned?.slice(0, 3),
 		popular: popular?.slice(0, 4) ?? [],
-		pageMetaTags,
+		pageMetaTags
 	};
 }) satisfies PageServerLoad;

@@ -1,22 +1,22 @@
 <script lang="ts">
-import type { Post } from "@/data/gql";
+	import type { Post } from '@/data/gql';
 
-import { css, cx } from "styled-system/css";
-import { hstack } from "styled-system/patterns";
-import { cardSlotRecipe as card } from "$lib/components/ui/card";
-import { badgeRecipe } from "$lib/components/ui/badge";
+	import { css, cx } from 'styled-system/css';
+	import { hstack } from 'styled-system/patterns';
+	import { cardSlotRecipe as card } from '$lib/components/ui/card';
+	import { badgeRecipe } from '$lib/components/ui/badge';
 
-import Date from "$lib/components/widgets/date.svelte";
-import Image from "$lib/components/widgets/image.svelte";
+	import Date from '$lib/components/widgets/date.svelte';
+	import Image from '$lib/components/widgets/image.svelte';
 
-interface Props {
-	post: Post;
-	hasExcerpt?: boolean;
-}
+	interface Props {
+		post: Post;
+		hasExcerpt?: boolean;
+	}
 
-let { post, hasExcerpt = false }: Props = $props();
+	let { post, hasExcerpt = false }: Props = $props();
 
-let category = $derived(post.node.categories?.nodes.at(0));
+	let category = $derived(post.node.categories?.nodes.at(0));
 </script>
 
 <article class={cx(card({ size: 'sm' }).root, 'group', css({ p: '0' }), 'group')}>
@@ -73,14 +73,16 @@ let category = $derived(post.node.categories?.nodes.at(0));
 		</a>
 		{#if hasExcerpt}
 			<a href={`/${category.slug}/${post.node.slug}`}>
-				<p class={css({
-						color: "neutral.700",
-						fontSize: { base: "sm", sm: "lg"},
-						pt: "2",
+				<p
+					class={css({
+						color: 'neutral.700',
+						fontSize: { base: 'sm', sm: 'lg' },
+						pt: '2',
 						lineClamp: 3
-					})}>
+					})}
+				>
 					{@html post.node.excerpt}
-				</p>			
+				</p>
 			</a>
 		{/if}
 	</div>

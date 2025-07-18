@@ -1,18 +1,13 @@
 <script lang="ts">
-import type { PageProps } from "./$types";
-import { css } from "styled-system/css";
+	import type { PageProps } from './$types';
+	import { css } from 'styled-system/css';
 
-import { buttonRecipe } from "@/components/ui/button";
+	import { buttonRecipe } from '@/components/ui/button';
 
-import {
-	HomeMain,
-	Posts,
-	SectionWithHeader,
-	PostsWithHighlight,
-} from "@/components/partials";
-import { AdBanner } from "@/components/widgets";
+	import { HomeMain, Posts, SectionWithHeader, PostsWithHighlight } from '@/components/partials';
+	import { AdBanner } from '@/components/widgets';
 
-let { data }: PageProps = $props();
+	let { data }: PageProps = $props();
 </script>
 
 <HomeMain posts={data.first} />
@@ -25,17 +20,16 @@ let { data }: PageProps = $props();
 	<SectionWithHeader title="Dernières publications">
 		<Posts posts={data.latest} />
 
-		<div class={css({
-				w: "full",
-				mt: "4",
-				py: "2",
-				display: "flex",
-				justifyContent: "flex-end"
-			})}>
-			<a
-				href="/latest-posts"
-				class={buttonRecipe({ variant: "outline"})}
-			>
+		<div
+			class={css({
+				w: 'full',
+				mt: '4',
+				py: '2',
+				display: 'flex',
+				justifyContent: 'flex-end'
+			})}
+		>
+			<a href="/latest-posts" class={buttonRecipe({ variant: 'outline' })}>
 				Lire plus d'articles
 			</a>
 		</div>

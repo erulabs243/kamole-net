@@ -1,3 +1,7 @@
 {
-	"ignorePatterns": ["src/lib/data/gql/", "node_modules/", "src/lib/components/ui/"]
+	"$schema": "./node_modules/oxlint/configuration_schema.json",
+	"ignorePatterns": ["src/lib/data/gql/", "node_modules/", "src/lib/components/ui/"],
+	"rules": {
+		"svelte/no-at-html-tags": "off"
+	}
 }

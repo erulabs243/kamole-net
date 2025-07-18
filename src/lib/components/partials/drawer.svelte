@@ -1,24 +1,24 @@
 <script lang="ts">
-import { afterNavigate } from "$app/navigation";
-import { Dialog, Portal, Positioner, useDialog } from "@ark-ui/svelte";
-import { MenuIcon, XIcon } from "lucide-svelte";
+	import { afterNavigate } from '$app/navigation';
+	import { Dialog, Portal, Positioner, useDialog } from '@ark-ui/svelte';
+	import { MenuIcon, XIcon } from 'lucide-svelte';
 
-import { css, cx } from "styled-system/css";
-import { vstack, center, hstack } from "styled-system/patterns";
+	import { css, cx } from 'styled-system/css';
+	import { vstack, center, hstack } from 'styled-system/patterns';
 
-import type { Category } from "@/data/gql";
+	import type { Category } from '@/data/gql';
 
-import { drawer } from "$lib/components/ui/drawer";
-import { buttonRecipe } from "../ui/button";
+	import { drawer } from '$lib/components/ui/drawer';
+	import { buttonRecipe } from '../ui/button';
 
-interface Props {
-	categories: Array<Category>;
-}
-const dialog = useDialog();
-// Close drawer after navigation
-afterNavigate(() => dialog().setOpen(false));
+	interface Props {
+		categories: Array<Category>;
+	}
+	const dialog = useDialog();
+	// Close drawer after navigation
+	afterNavigate(() => dialog().setOpen(false));
 
-let { categories }: Props = $props();
+	let { categories }: Props = $props();
 </script>
 
 <Dialog.RootProvider value={dialog}>

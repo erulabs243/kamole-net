@@ -1,14 +1,14 @@
 <script lang="ts">
-import { Image } from "@unpic/svelte";
+	import { Image } from '@unpic/svelte';
 
-import { css } from "styled-system/css";
+	import { css } from 'styled-system/css';
 
-interface Props {
-	src?: string;
-	alt?: string;
-}
+	interface Props {
+		src?: string;
+		alt?: string;
+	}
 
-let { src, alt }: Props = $props();
+	let { src, alt }: Props = $props();
 </script>
 
 {#if src}
@@ -20,8 +20,5 @@ let { src, alt }: Props = $props();
 		class={css({ objectFit: 'cover', objectPosition: 'center' })}
 	/>
 {:else}
-	<img
-		src="https://placehold.co/600x400?text=Kamole"
-		alt="Kamole"
-	/>
+	<img src="https://placehold.co/600x400?text=Kamole" alt="Kamole" />
 {/if}

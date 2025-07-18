@@ -1,24 +1,21 @@
-import { WORDPRESS_BASE_URL } from "$env/static/private";
+import { WORDPRESS_BASE_URL } from '$env/static/private';
 
-import { createClient } from "../gql";
+import { createClient } from '../gql';
 
 export const client = createClient({
-	url: `${WORDPRESS_BASE_URL}/graphql`,
+	url: `${WORDPRESS_BASE_URL}/graphql`
 });
 
 export const generatePaginationArgs = (
 	limit: number,
 	before?: string | null,
-	after?: string | null,
+	after?: string | null
 ) => {
-	const args: Record<
-		"first" | "after" | "last" | "before",
-		number | string | null | undefined
-	> = {
+	const args: Record<'first' | 'after' | 'last' | 'before', number | string | null | undefined> = {
 		first: limit as number,
 		after: null,
 		last: null,
-		before: null,
+		before: null
 	};
 
 	// For the first page

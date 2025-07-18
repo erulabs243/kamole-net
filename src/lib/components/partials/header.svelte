@@ -1,35 +1,37 @@
 <script lang="ts">
-import { MenuIcon, SearchIcon } from "lucide-svelte";
-import { PUBLIC_WEBSITE_SLOGAN } from "$env/static/public";
+	import { MenuIcon, SearchIcon } from 'lucide-svelte';
+	import { PUBLIC_WEBSITE_SLOGAN } from '$env/static/public';
 
-import Kamole from "$lib/assets/kamole.png?enhanced";
+	import Kamole from '$lib/assets/kamole.png?enhanced';
 
-import type { Category } from "@/data/gql";
-import { stack, center } from "styled-system/patterns";
-import { css } from "styled-system/css";
+	import type { Category } from '@/data/gql';
+	import { stack, center } from 'styled-system/patterns';
+	import { css } from 'styled-system/css';
 
-import { buttonRecipe } from "$lib/components/ui/button";
-import Drawer from "./drawer.svelte";
+	import { buttonRecipe } from '$lib/components/ui/button';
+	import Drawer from './drawer.svelte';
 
-interface Props {
-	categories: Array<Category>;
-}
+	interface Props {
+		categories: Array<Category>;
+	}
 
-let { categories }: Props = $props();
+	let { categories }: Props = $props();
 </script>
 
-<header class={css({
-		pos: "sticky",
-		top: "0",
-		bg: "neutral.50",
-		zIndex: "100"
-	})}>
+<header
+	class={css({
+		pos: 'sticky',
+		top: '0',
+		bg: 'neutral.50',
+		zIndex: '100'
+	})}
+>
 	<!-- Title with sidebar -->
 	<div
 		class={stack({
 			px: { base: '4', sm: '12' },
-			pb: "2",
-			pt: "4",
+			pb: '2',
+			pt: '4',
 			flexDir: 'row',
 			alignItems: 'center',
 			justify: 'space-between'
@@ -57,25 +59,29 @@ let { categories }: Props = $props();
 			</a>
 		</div>
 
-		<div class={center({
-				flexDir: "column",
-				flexGrow: "grow",
-				gap: "2"
-			})}>
-		<!-- Logo -->
-		<a href="/" aria-label="Kamole - Page d'accueil">
-			<enhanced:img src={Kamole} alt="Kamole" class={css({ w: '24' })} />
-		</a>
-		<p class={css({
-				hideFrom: "sm",
-				textAlign: "center",
-				fontStyle: "italic",
-				lineHeight: "1.1",
-				fontSize: "sm",
-				fontFamily: "ibmSerif"
-			})}>
-			{PUBLIC_WEBSITE_SLOGAN}
-		</p>
+		<div
+			class={center({
+				flexDir: 'column',
+				flexGrow: 'grow',
+				gap: '2'
+			})}
+		>
+			<!-- Logo -->
+			<a href="/" aria-label="Kamole - Page d'accueil">
+				<enhanced:img src={Kamole} alt="Kamole" class={css({ w: '24' })} />
+			</a>
+			<p
+				class={css({
+					hideFrom: 'sm',
+					textAlign: 'center',
+					fontStyle: 'italic',
+					lineHeight: '1.1',
+					fontSize: 'sm',
+					fontFamily: 'ibmSerif'
+				})}
+			>
+				{PUBLIC_WEBSITE_SLOGAN}
+			</p>
 		</div>
 
 		<!-- Right navigation -->
@@ -90,8 +96,8 @@ let { categories }: Props = $props();
 						textStyle: 'paragraph',
 						fontSize: 'sm',
 						fontWeight: 'semibold',
-						fontFamily: "ibmSerif",
-						fontStyle: "italic"
+						fontFamily: 'ibmSerif',
+						fontStyle: 'italic'
 					})}
 				>
 					{PUBLIC_WEBSITE_SLOGAN}

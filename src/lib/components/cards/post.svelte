@@ -1,19 +1,19 @@
 <script lang="ts">
-import { stack } from "styled-system/patterns";
-import { cx, css } from "styled-system/css";
+	import { stack } from 'styled-system/patterns';
+	import { cx, css } from 'styled-system/css';
 
-import type { Post } from "@/data/gql";
+	import type { Post } from '@/data/gql';
 
-import { badgeRecipe } from "$lib/components/ui/badge";
-import Image from "$lib/components/widgets/image.svelte";
-import Date from "$lib/components/widgets/date.svelte";
+	import { badgeRecipe } from '$lib/components/ui/badge';
+	import Image from '$lib/components/widgets/image.svelte';
+	import Date from '$lib/components/widgets/date.svelte';
 
-interface Props {
-	post: Post;
-}
+	interface Props {
+		post: Post;
+	}
 
-let { post }: Post = $props();
-let category = $derived(post?.node?.categories?.nodes?.at(0));
+	let { post }: Post = $props();
+	let category = $derived(post?.node?.categories?.nodes?.at(0));
 </script>
 
 <div
@@ -24,12 +24,14 @@ let category = $derived(post?.node?.categories?.nodes?.at(0));
 		'group'
 	)}
 >
-	<div class={css({
+	<div
+		class={css({
 			w: { base: '1/3', sm: 'full' },
-			h: { base: "full", sm: "40"},
-			overflow: "hidden",
-			rounded: "sm"
-		})}>
+			h: { base: 'full', sm: '40' },
+			overflow: 'hidden',
+			rounded: 'sm'
+		})}
+	>
 		<a href={`/${category.slug}/${post.node.slug}`}>
 			<Image
 				src={post?.node.featuredImage?.node?.sourceUrl}

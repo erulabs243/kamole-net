@@ -1,10 +1,10 @@
-import { client, generatePaginationArgs } from "./client";
-import { seo } from "./seo";
+import { client, generatePaginationArgs } from './client';
+import { seo } from './seo';
 
 export const getPosts = async (
 	limit: number = 12,
 	after: string | null = null,
-	before: string | null = null,
+	before: string | null = null
 ) => {
 	const args = generatePaginationArgs(limit, before, after);
 
@@ -12,13 +12,13 @@ export const getPosts = async (
 		await client.query({
 			posts: {
 				__args: {
-					...args,
+					...args
 				},
 				pageInfo: {
 					hasNextPage: true,
 					hasPreviousPage: true,
 					endCursor: true,
-					startCursor: true,
+					startCursor: true
 				},
 				edges: {
 					node: {
@@ -30,24 +30,24 @@ export const getPosts = async (
 						featuredImage: {
 							node: {
 								sourceUrl: true,
-								altText: true,
-							},
+								altText: true
+							}
 						},
 						tags: {
 							nodes: {
 								name: true,
-								slug: true,
-							},
+								slug: true
+							}
 						},
 						categories: {
 							nodes: {
 								name: true,
-								slug: true,
-							},
-						},
-					},
-				},
-			},
+								slug: true
+							}
+						}
+					}
+				}
+			}
 		})
 	).posts;
 };
@@ -58,7 +58,7 @@ export const getPinnedPosts = async (limit: number = 8) => {
 			posts: {
 				__args: {
 					first: limit,
-					where: {},
+					where: {}
 				},
 				edges: {
 					node: {
@@ -70,24 +70,24 @@ export const getPinnedPosts = async (limit: number = 8) => {
 						featuredImage: {
 							node: {
 								sourceUrl: true,
-								altText: true,
-							},
+								altText: true
+							}
 						},
 						tags: {
 							nodes: {
 								name: true,
-								slug: true,
-							},
+								slug: true
+							}
 						},
 						categories: {
 							nodes: {
 								name: true,
-								slug: true,
-							},
-						},
-					},
-				},
-			},
+								slug: true
+							}
+						}
+					}
+				}
+			}
 		})
 	).posts;
 };
@@ -99,7 +99,7 @@ export const getPostsByCategory = async (
 	category: string,
 	limit: number = 12,
 	after: string | null = null,
-	before: string | null = null,
+	before: string | null = null
 ) => {
 	const args = generatePaginationArgs(limit, before, after);
 
@@ -108,13 +108,13 @@ export const getPostsByCategory = async (
 			posts: {
 				__args: {
 					...args,
-					where: { categoryIn: [category] },
+					where: { categoryIn: [category] }
 				},
 				pageInfo: {
 					hasNextPage: true,
 					hasPreviousPage: true,
 					endCursor: true,
-					startCursor: true,
+					startCursor: true
 				},
 				edges: {
 					node: {
@@ -126,24 +126,24 @@ export const getPostsByCategory = async (
 						featuredImage: {
 							node: {
 								sourceUrl: true,
-								altText: true,
-							},
+								altText: true
+							}
 						},
 						tags: {
 							nodes: {
 								name: true,
-								slug: true,
-							},
+								slug: true
+							}
 						},
 						categories: {
 							nodes: {
 								name: true,
-								slug: true,
-							},
-						},
-					},
-				},
-			},
+								slug: true
+							}
+						}
+					}
+				}
+			}
 		})
 	).posts;
 };
@@ -157,7 +157,7 @@ export const getPost = async (slug: string) => {
 			post: {
 				__args: {
 					id: slug,
-					idType: "SLUG",
+					idType: 'SLUG'
 				},
 				title: true,
 				excerpt: true,
@@ -168,22 +168,22 @@ export const getPost = async (slug: string) => {
 				featuredImage: {
 					node: {
 						sourceUrl: true,
-						altText: true,
-					},
+						altText: true
+					}
 				},
 				categories: {
 					nodes: {
 						name: true,
 						slug: true,
-						id: true,
-					},
+						id: true
+					}
 				},
 				tags: {
 					nodes: {
 						name: true,
 						slug: true,
-						id: true,
-					},
+						id: true
+					}
 				},
 				author: {
 					node: {
@@ -192,16 +192,16 @@ export const getPost = async (slug: string) => {
 						firstName: true,
 						lastName: true,
 						avatar: {
-							url: true,
-						},
-					},
+							url: true
+						}
+					}
 				},
 				seo,
 				relatedPosts: {
 					__args: {
 						where: {
-							limit: 5,
-						},
+							limit: 5
+						}
 					},
 					edges: {
 						node: {
@@ -211,19 +211,19 @@ export const getPost = async (slug: string) => {
 							featuredImage: {
 								node: {
 									sourceUrl: true,
-									altText: true,
-								},
+									altText: true
+								}
 							},
 							categories: {
 								nodes: {
 									name: true,
-									slug: true,
-								},
-							},
-						},
-					},
-				},
-			},
+									slug: true
+								}
+							}
+						}
+					}
+				}
+			}
 		})
 	).post;
 };
@@ -235,7 +235,7 @@ export const searchPosts = async (
 	term: string,
 	limit: number = 12,
 	after: string | null = null,
-	before: string | null = null,
+	before: string | null = null
 ) => {
 	const args = generatePaginationArgs(limit, before, after);
 
@@ -244,13 +244,13 @@ export const searchPosts = async (
 			posts: {
 				__args: {
 					...args,
-					where: { search: term },
+					where: { search: term }
 				},
 				pageInfo: {
 					hasNextPage: true,
 					hasPreviousPage: true,
 					endCursor: true,
-					startCursor: true,
+					startCursor: true
 				},
 				edges: {
 					node: {
@@ -262,24 +262,24 @@ export const searchPosts = async (
 						featuredImage: {
 							node: {
 								sourceUrl: true,
-								altText: true,
-							},
+								altText: true
+							}
 						},
 						tags: {
 							nodes: {
 								name: true,
-								slug: true,
-							},
+								slug: true
+							}
 						},
 						categories: {
 							nodes: {
 								name: true,
-								slug: true,
-							},
-						},
-					},
-				},
-			},
+								slug: true
+							}
+						}
+					}
+				}
+			}
 		})
 	).posts;
 };

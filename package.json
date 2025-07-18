@@ -7,14 +7,17 @@
 		"dev": "bun run generate:gql && vite dev",
 		"build": "bun run generate:gql && vite build",
 		"preview": "vite preview",
-		"prepare": "svelte-kit sync && panda codegen || echo ''",
+		"prepare": "svelte-kit sync && panda codegen && husky",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
 		"format": "prettier --write .",
 		"lint": "oxlint && prettier --check . && eslint .",
-		"generate:gql": "bun run ./src/lib/data/generate-client.ts"
+		"generate:gql": "bun run ./src/lib/data/generate-client.ts",
+		"cz": "cz"
 	},
 	"devDependencies": {
+		"@commitlint/cli": "^19.8.1",
+		"@commitlint/config-conventional": "^19.8.1",
 		"@eslint/compat": "^1.2.5",
 		"@eslint/js": "^9.18.0",
 		"@genql/cli": "^6.3.3",
@@ -27,11 +30,15 @@
 		"@sveltejs/enhanced-img": "^0.6.1",
 		"@sveltejs/kit": "^2.16.0",
 		"@sveltejs/vite-plugin-svelte": "^5.0.0",
+		"commitizen": "^4.3.1",
+		"cz-conventional-changelog": "^3.3.0",
 		"eslint": "^9.18.0",
 		"eslint-config-prettier": "^10.0.1",
 		"eslint-plugin-oxlint": "^1.5.0",
 		"eslint-plugin-svelte": "^3.0.0",
 		"globals": "^16.0.0",
+		"husky": "^9.1.7",
+		"lint-staged": "^16.1.2",
 		"oxlint": "^1.5.0",
 		"pandacss-preset-typography": "^0.1.6",
 		"prettier": "^3.4.2",
@@ -52,5 +59,10 @@
 		"@fontsource/ibm-plex-serif": "^5.2.6",
 		"@unpic/svelte": "^1.0.0",
 		"lucide-svelte": "^0.525.0"
+	},
+	"config": {
+		"commitizen": {
+			"path": "./node_modules/cz-conventional-changelog"
+		}
 	}
 }

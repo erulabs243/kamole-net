@@ -1,20 +1,20 @@
 <script lang="ts">
-import { stack } from "styled-system/patterns";
-import { cx, css } from "styled-system/css";
+	import { stack } from 'styled-system/patterns';
+	import { cx, css } from 'styled-system/css';
 
-import type { Post } from "@/data/gql";
+	import type { Post } from '@/data/gql';
 
-import { badgeRecipe } from "$lib/components/ui/badge";
-import Image from "$lib/components/widgets/image.svelte";
-import Date from "$lib/components/widgets/date.svelte";
+	import { badgeRecipe } from '$lib/components/ui/badge';
+	import Image from '$lib/components/widgets/image.svelte';
+	import Date from '$lib/components/widgets/date.svelte';
 
-interface Props {
-	post: Post;
-	isHighlight?: boolean;
-}
+	interface Props {
+		post: Post;
+		isHighlight?: boolean;
+	}
 
-let { post, isHighlight }: Props = $props();
-let category = $derived(post?.node?.categories?.nodes?.at(0));
+	let { post, isHighlight }: Props = $props();
+	let category = $derived(post?.node?.categories?.nodes?.at(0));
 </script>
 
 <div
@@ -28,7 +28,7 @@ let category = $derived(post?.node?.categories?.nodes?.at(0));
 	<div
 		class={css({
 			w: { base: '1/3', sm: 'full' },
-			h: { base: 'full', sm: isHighlight ? "64" : '40' },
+			h: { base: 'full', sm: isHighlight ? '64' : '40' },
 			overflow: 'hidden',
 			rounded: 'sm'
 		})}

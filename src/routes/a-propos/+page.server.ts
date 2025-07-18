@@ -1,10 +1,8 @@
-import type { MetaTagsProps } from 'svelte-meta-tags';
-import type { PageServerLoad } from './$types';
+import type { PageServerLoad } from "./$types";
+import { generateMetaTags } from "@/utils/seo";
 
 export const load = (async () => {
-	const pageMetaTags = Object.freeze({
-		title: 'A propos de nous'
-	}) satisfies MetaTagsProps;
+	const pageMetaTags = generateMetaTags({ title: "A propos de nous" });
 
 	return { pageMetaTags };
 }) satisfies PageServerLoad;

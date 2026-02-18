@@ -62,10 +62,7 @@
 					{data.post.title}
 				</h1>
 
-				<p class={prose({ size: { base: 'base', sm: 'lg' } })}>
-					{@html data.post.excerpt}
-				</p>
-
+	
 				<!-- Author -->
 				<a
 					href={`/auteurs/${data.post.author.node.name}-${data.post.author.node.id}`}

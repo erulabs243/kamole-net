@@ -56,7 +56,8 @@
 			<div>
 				<h1
 					class={css({
-						textStyle: { base: 'h3', sm: 'h2' }
+						textStyle: { base: 'h3', sm: 'h2' },
+						mb: "4"
 					})}
 				>
 					{data.post.title}

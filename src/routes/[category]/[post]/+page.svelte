@@ -121,7 +121,7 @@
 	<div class={css({ px: '4',
 	w: { base: "full", sm: "2/3" },
 	mx: "auto" })}>
-		<article class={prose({ size: { sm: 'lg' } })}>
+		<article class={prose({ size: { sm: 'xl' } })}>
 			{@html data.post.content}
 		</article>
 	</div>

@@ -105,7 +105,7 @@
 		<div
 			class={css({
 				w: "full",
-				h: { base: "64", sm: "96" },
+				h: { base: "72", sm: "30rem" },
 				overflow: 'hidden'
 			})}
 		>

@@ -17,7 +17,7 @@
 		{alt}
 		layout="constrained"
 		loading="lazy"
-		class={css({ objectFit: 'cover', objectPosition: 'center' })}
+		class={css({ objectFit: 'cover', objectPosition: 'center', h: "full", w: "full" })}
 	/>
 {:else}
 	<img src="https://placehold.co/600x400?text=Kamole" alt="Kamole" />

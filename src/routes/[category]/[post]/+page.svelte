@@ -65,7 +65,6 @@
 						lineHeight: '1.2',
 						textAlign: 'left',
 						w: 'full',
-						bg: "red"
 					})}
 				>
 					{data.post.title}

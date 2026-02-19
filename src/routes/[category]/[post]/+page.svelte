@@ -32,7 +32,8 @@
 				spaceY: '2',
 				flexDir: 'column',
 				w: { base: 'full', sm: '1/2' },
-				flexGrow: 'grow'
+				flexGrow: 'grow',
+				w: "full"
 			})}
 		>
 			<div
@@ -56,11 +57,11 @@
 			</div>
 
 			<!-- Title, subtitle and author -->
-			<div>
+			<div class={css({ w: "full"})}>
 				<h1
 					class={css({
 						textStyle: { base: 'h4', sm: 'h3' },
-						mb: "4"
+						mb: "4",
 					})}
 				>
 					{data.post.title}

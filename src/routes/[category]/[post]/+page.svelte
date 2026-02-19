@@ -62,6 +62,7 @@
 					class={css({
 						textStyle: { base: 'h4', sm: 'h3' },
 						mb: "4",
+						lineHeight: "1.5",
 					})}
 				>
 					{data.post.title}

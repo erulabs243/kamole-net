@@ -31,7 +31,7 @@
 			class={stack({
 				spaceY: '2',
 				flexDir: 'column',
-				w: { base: 'full', sm: '1/2' },
+				w: { base: 'full', md: '1/2' },
 				flexGrow: 'grow',
 				w: "full"
 			})}
@@ -60,9 +60,10 @@
 			<div class={css({ w: "full"})}>
 				<h1
 					class={css({
-						textStyle: { base: 'h4', sm: 'h3' },
+						textStyle: { base: 'h4', md: 'h3' },
 						mb: "4",
-						lineHeight: "1.5",
+						lineHeight: "1.2",
+						textWrap: "pretty"
 					})}
 				>
 					{data.post.title}

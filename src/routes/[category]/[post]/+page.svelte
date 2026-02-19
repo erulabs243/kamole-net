@@ -24,15 +24,15 @@
 			gap: { base: '4', sm: '8' },
 			px: '4',
 			w: { base: 'full', lg: '2/3' },
-			mx: 'auto'
+			mx: 'auto',
 		})}
 	>
 		<div
 			class={stack({
 				spaceY: '2',
 				flexDir: 'column',
-				w: { base: 'full', md: '1/2' },
-				flexGrow: 'grow'
+				w: 'full',
+				flexGrow: 'grow',
 			})}
 		>
 			<div
@@ -59,11 +59,13 @@
 			<div class={css({ w: 'full' })}>
 				<p
 					class={css({
+					  display: "inline-block",
 						textStyle: { base: 'h4', md: 'h3' },
 						mb: '4',
 						lineHeight: '1.2',
 						textAlign: 'left',
 						w: 'full',
+						bg: "red"
 					})}
 				>
 					{data.post.title}

@@ -7,6 +7,7 @@ export const textStyles = defineTextStyles({
       fontWeight: "bold",
       lineHeight: "1.2",
       fontFamily: "ibmSerif",
+      textWrap: "balance"
     },
   },
   h2: {

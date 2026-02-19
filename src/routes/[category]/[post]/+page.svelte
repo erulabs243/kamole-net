@@ -16,15 +16,15 @@
 	let { data }: PageProps = $props();
 </script>
 
-<div class={css({ spaceY: { base: '8', sm: '16'}})}>
+<div class={css({ spaceY: { base: '8', sm: '16' } })}>
 	<!-- Header -->
 	<header
 		class={stack({
-			direction: "column-reverse",
+			direction: 'column-reverse',
 			gap: { base: '4', sm: '8' },
-			px: "4",
-			w: { base: "full", sm: "2/3" },
-			mx: "auto"
+			px: '4',
+			w: { base: 'full', lg: '2/3' },
+			mx: 'auto'
 		})}
 	>
 		<div
@@ -32,8 +32,7 @@
 				spaceY: '2',
 				flexDir: 'column',
 				w: { base: 'full', md: '1/2' },
-				flexGrow: 'grow',
-				w: "full"
+				flexGrow: 'grow'
 			})}
 		>
 			<div
@@ -57,18 +56,19 @@
 			</div>
 
 			<!-- Title, subtitle and author -->
-			<div class={css({ w: "full"})}>
-				<h1
+			<div class={css({ w: 'full' })}>
+				<p
 					class={css({
 						textStyle: { base: 'h4', md: 'h3' },
-						mb: "4",
-						lineHeight: "1.2",
-						textWrap: "pretty"
+						mb: '4',
+						lineHeight: '1.2',
+						textAlign: 'left',
+						w: 'full',
+						maxW: "none"
 					})}
 				>
 					{data.post.title}
-				</h1>
-
+				</p>
 
 				<!-- Author -->
 				<a
@@ -107,13 +107,13 @@
 
 		<div
 			class={css({
-				w: "full",
-				h: { base: "72", sm: "30rem" },
+				w: 'full',
+				h: { base: '72', sm: '30rem' },
 				overflow: 'hidden'
 			})}
 		>
 			<Image
-			    class="text"
+				class="text"
 				src={data.post.featuredImage?.node.sourceUrl}
 				alt={data.post.featuredImage?.node.altText || data.post.title}
 			/>
@@ -121,9 +121,7 @@
 	</header>
 
 	<!-- Post -->
-	<div class={css({ px: '4',
-	w: { base: "full", sm: "2/3" },
-	mx: "auto" })}>
+	<div class={css({ px: '4', w: { base: 'full', lg: '2/3' }, mx: 'auto' })}>
 		<article class={prose({ size: { sm: 'xl' } })}>
 			{@html data.post.content}
 		</article>

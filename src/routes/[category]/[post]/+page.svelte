@@ -64,7 +64,6 @@
 						lineHeight: '1.2',
 						textAlign: 'left',
 						w: 'full',
-						maxW: "none"
 					})}
 				>
 					{data.post.title}

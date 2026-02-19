@@ -16,12 +16,15 @@
 	let { data }: PageProps = $props();
 </script>
 
-<div class={css({ spaceY: { base: '8', sm: '16' } })}>
+<div class={css({ spaceY: { base: '8', sm: '16'}})}>
 	<!-- Header -->
 	<header
 		class={stack({
-			direction: { base: 'column', sm: 'row' },
-			gap: '2'
+			direction: "column-reverse",
+			gap: { base: '4', sm: '8' },
+			px: "4",
+			w: { base: "full", sm: "2/3" },
+			mx: "auto"
 		})}
 	>
 		<div
@@ -56,14 +59,14 @@
 			<div>
 				<h1
 					class={css({
-						textStyle: { base: 'h3', sm: 'h2' },
+						textStyle: { base: 'h4', sm: 'h3' },
 						mb: "4"
 					})}
 				>
 					{data.post.title}
 				</h1>
 
-	
+
 				<!-- Author -->
 				<a
 					href={`/auteurs/${data.post.author.node.name}-${data.post.author.node.id}`}
@@ -101,11 +104,13 @@
 
 		<div
 			class={css({
-				w: { base: 'full', sm: '1/2' },
-				flexGrow: 'grow'
+				w: "full",
+				h: { base: "64", sm: "96" },
+				overflow: 'hidden'
 			})}
 		>
 			<Image
+			    class="text"
 				src={data.post.featuredImage?.node.sourceUrl}
 				alt={data.post.featuredImage?.node.altText || data.post.title}
 			/>
@@ -113,7 +118,9 @@
 	</header>
 
 	<!-- Post -->
-	<div class={css({ px: '4' })}>
+	<div class={css({ px: '4',
+	w: { base: "full", sm: "2/3" },
+	mx: "auto" })}>
 		<article class={prose({ size: { sm: 'lg' } })}>
 			{@html data.post.content}
 		</article>

@@ -1,8 +1,8 @@
-import type { PageServerLoad } from './$types';
-import { generateMetaTags } from '@/utils/seo';
+import type { PageServerLoad } from "./$types";
+import { generateMetaTags } from "@/utils/seo";
 
 export const load = (async () => {
-	const pageMetaTags = generateMetaTags({ title: 'A propos de nous' });
+  const pageMetaTags = generateMetaTags({ title: "A propos de nous" });
 
-	return { pageMetaTags };
+  return { pageMetaTags };
 }) satisfies PageServerLoad;

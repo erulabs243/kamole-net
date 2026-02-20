@@ -24,7 +24,7 @@
 			gap: { base: '4', sm: '8' },
 			px: '4',
 			w: { base: 'full', lg: '2/3' },
-			mx: 'auto',
+			mx: 'auto'
 		})}
 	>
 		<div
@@ -32,7 +32,7 @@
 				spaceY: '2',
 				flexDir: 'column',
 				w: 'full',
-				flexGrow: 'grow',
+				flexGrow: 'grow'
 			})}
 		>
 			<div
@@ -59,12 +59,12 @@
 			<div class={css({ w: 'full' })}>
 				<p
 					class={css({
-					  display: "inline-block",
+						display: 'inline-block',
 						textStyle: { base: 'h4', md: 'h3' },
 						mb: '4',
 						lineHeight: '1.2',
 						textAlign: 'left',
-						w: 'full',
+						w: 'full'
 					})}
 				>
 					{data.post.title}
@@ -122,7 +122,7 @@
 
 	<!-- Post -->
 	<div class={css({ px: '4', w: { base: 'full', lg: '2/3' }, mx: 'auto' })}>
-		<article class={prose({ size: { sm: 'xl' } })}>
+		<article class={prose({ size: { base: 'base', sm: 'xl' } })}>
 			{@html data.post.content}
 		</article>
 	</div>
